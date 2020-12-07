@@ -4,6 +4,7 @@ using SEProject.MyBlogProject.DataAccess.Interfaces;
 using SEProject.MyBlogProject.Entities.Interfaces;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
 
@@ -25,24 +26,51 @@ namespace SEProject.MyBlogProject.DataAccess.Concrete.EntityFrameworkCore.Reposi
             return await context.Set<TEntity>().ToListAsync();
         }
 
-        public Task<List<TEntity>> GetAllAsync(Expression<Func<TEntity, bool>> filter)
+        
+        public async Task<List<TEntity>> GetAllAsync(Expression<Func<TEntity, bool>> filter)
         {
-            throw new NotImplementedException();
+            using var context = new BlogContext();
+
+            return await context.Set<TEntity>().Where(filter).ToListAsync();
         }
 
-        public Task<TEntity> GetAsync(Expression<Func<TEntity, bool>> filter)
+        public async Task<List<TEntity>> GetAllAsync<TKey>(Expression<Func<TEntity, bool>> filter, Expression<Func<TEntity, TKey>> keySelector)
         {
-            throw new NotImplementedException();
+            using var context = new BlogContext();
+
+            return await context.Set<TEntity>().Where(filter).OrderByDescending(keySelector).ToListAsync();
         }
 
-        public Task RemoveAsync(TEntity entity)
+        public async Task<List<TEntity>> GetAllAsync<TKey>(Expression<Func<TEntity, TKey>> keySelector)
         {
-            throw new NotImplementedException();
+            using var context = new BlogContext();
+
+            return await context.Set<TEntity>().OrderByDescending(keySelector).ToListAsync();
         }
 
-        public Task UpdateAsync(TEntity entity)
+        public async Task<TEntity> GetAsync(Expression<Func<TEntity, bool>> filter)
         {
-            throw new NotImplementedException();
+            using var context = new BlogContext();
+
+            return await context.Set<TEntity>().FirstOrDefaultAsync(filter);
+        }
+
+        public async Task RemoveAsync(TEntity entity)
+        {
+            using var context = new BlogContext();
+
+            context.Remove(entity);
+
+            await context.SaveChangesAsync();
+        }
+
+        public async Task UpdateAsync(TEntity entity)
+        {
+            using var context = new BlogContext();
+
+            context.Update(entity);
+
+            await context.SaveChangesAsync();
         }
     }
 }
