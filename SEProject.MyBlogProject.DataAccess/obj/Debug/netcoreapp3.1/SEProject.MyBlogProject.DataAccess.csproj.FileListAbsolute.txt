@@ -1,0 +1,4 @@
+C:\Users\SE\source\repos\MyBlogProject\SEProject.MyBlogProject.DataAccess\bin\Debug\netcoreapp3.1\SEProject.MyBlogProject.Entities.dll
+C:\Users\SE\source\repos\MyBlogProject\SEProject.MyBlogProject.DataAccess\obj\Debug\netcoreapp3.1\SEProject.MyBlogProject.DataAccess.csprojAssemblyReference.cache
+C:\Users\SE\source\repos\MyBlogProject\SEProject.MyBlogProject.DataAccess\obj\Debug\netcoreapp3.1\SEProject.MyBlogProject.DataAccess.AssemblyInfoInputs.cache
+C:\Users\SE\source\repos\MyBlogProject\SEProject.MyBlogProject.DataAccess\obj\Debug\netcoreapp3.1\SEProject.MyBlogProject.DataAccess.AssemblyInfo.cs
