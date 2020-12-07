@@ -1,5 +1,6 @@
 ﻿using SEProject.MyBlogProject.Entities.Interfaces;
 using System;
+using System.Collections.Generic;
 
 namespace SEProject.MyBlogProject.Entities.Concrete
 {
@@ -9,6 +10,9 @@ namespace SEProject.MyBlogProject.Entities.Concrete
         public string Title { get; set; }
         public string ShortDescription { get; set; }
         public string Description { get; set; }
+        public string ImagePath { get; set; }
         public DateTime PostedTime { get; set; }
+
+        public List<CategoryBlog> CategoryBlogs { get; set; }
     }
 }
