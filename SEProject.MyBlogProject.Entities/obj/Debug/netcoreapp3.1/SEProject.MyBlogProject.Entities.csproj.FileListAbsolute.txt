@@ -1,0 +1,9 @@
+C:\Users\SE\source\repos\MyBlogProject\SEProject.MyBlogProject.Entities\bin\Debug\netcoreapp3.1\SEProject.MyBlogProject.Entities.deps.json
+C:\Users\SE\source\repos\MyBlogProject\SEProject.MyBlogProject.Entities\bin\Debug\netcoreapp3.1\SEProject.MyBlogProject.Entities.dll
+C:\Users\SE\source\repos\MyBlogProject\SEProject.MyBlogProject.Entities\bin\Debug\netcoreapp3.1\SEProject.MyBlogProject.Entities.pdb
+C:\Users\SE\source\repos\MyBlogProject\SEProject.MyBlogProject.Entities\obj\Debug\netcoreapp3.1\SEProject.MyBlogProject.Entities.csprojAssemblyReference.cache
+C:\Users\SE\source\repos\MyBlogProject\SEProject.MyBlogProject.Entities\obj\Debug\netcoreapp3.1\SEProject.MyBlogProject.Entities.AssemblyInfoInputs.cache
+C:\Users\SE\source\repos\MyBlogProject\SEProject.MyBlogProject.Entities\obj\Debug\netcoreapp3.1\SEProject.MyBlogProject.Entities.AssemblyInfo.cs
+C:\Users\SE\source\repos\MyBlogProject\SEProject.MyBlogProject.Entities\obj\Debug\netcoreapp3.1\SEProject.MyBlogProject.Entities.csproj.CoreCompileInputs.cache
+C:\Users\SE\source\repos\MyBlogProject\SEProject.MyBlogProject.Entities\obj\Debug\netcoreapp3.1\SEProject.MyBlogProject.Entities.dll
+C:\Users\SE\source\repos\MyBlogProject\SEProject.MyBlogProject.Entities\obj\Debug\netcoreapp3.1\SEProject.MyBlogProject.Entities.pdb
