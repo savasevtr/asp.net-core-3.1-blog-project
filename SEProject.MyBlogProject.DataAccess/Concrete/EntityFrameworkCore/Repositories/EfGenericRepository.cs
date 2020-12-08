@@ -19,6 +19,13 @@ namespace SEProject.MyBlogProject.DataAccess.Concrete.EntityFrameworkCore.Reposi
             await context.SaveChangesAsync();
         }
 
+        public async Task<TEntity> FindByIdAsync(int id)
+        {
+            using var context = new BlogContext();
+
+            return await context.FindAsync<TEntity>(id);
+        }
+
         public async Task<List<TEntity>> GetAllAsync()
         {
             using var context = new BlogContext();
