@@ -1,6 +1,8 @@
 ﻿using SEProject.MyBlogProject.Business.Interfaces;
 using SEProject.MyBlogProject.DataAccess.Interfaces;
 using SEProject.MyBlogProject.Entities.Concrete;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace SEProject.MyBlogProject.Business.Concrete
 {
@@ -11,6 +13,11 @@ namespace SEProject.MyBlogProject.Business.Concrete
         public CategoryManager(IGenericDal<Category> genericDal) : base(genericDal)
         {
             _genericDal = genericDal;
+        }
+
+        public async Task<List<Category>> GetAllSortedById()
+        {
+            return await _genericDal.GetAllAsync(I => I.Id);
         }
     }
 }

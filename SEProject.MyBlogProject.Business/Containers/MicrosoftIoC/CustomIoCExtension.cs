@@ -12,6 +12,9 @@ namespace SEProject.MyBlogProject.Business.Containers.MicrosoftIoC
         {
             services.AddScoped(typeof(IGenericDal<>), typeof(EfGenericRepository<>));
             services.AddScoped(typeof(IGenericService<>), typeof(GenericManager<>));
+
+            services.AddScoped<IBlogService, BlogManager>();
+            services.AddScoped<IBlogDal, EfBlogRepository>();
         }
     }
 }

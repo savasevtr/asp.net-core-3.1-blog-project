@@ -3,11 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30717.126
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SEProject.MyBlogProject.Entities", "SEProject.MyBlogProject.Entities\SEProject.MyBlogProject.Entities.csproj", "{F372BF70-5D6F-4808-8724-5AE7A99545B2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SEProject.MyBlogProject.Entities", "SEProject.MyBlogProject.Entities\SEProject.MyBlogProject.Entities.csproj", "{F372BF70-5D6F-4808-8724-5AE7A99545B2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SEProject.MyBlogProject.DataAccess", "SEProject.MyBlogProject.DataAccess\SEProject.MyBlogProject.DataAccess.csproj", "{F99B9433-798F-4EA4-B0F2-B77F979C1E9C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SEProject.MyBlogProject.DataAccess", "SEProject.MyBlogProject.DataAccess\SEProject.MyBlogProject.DataAccess.csproj", "{F99B9433-798F-4EA4-B0F2-B77F979C1E9C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SEProject.MyBlogProject.Business", "SEProject.MyBlogProject.Business\SEProject.MyBlogProject.Business.csproj", "{868BB1B0-9D91-4AAE-9AC0-828BC4CFF0E9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SEProject.MyBlogProject.Business", "SEProject.MyBlogProject.Business\SEProject.MyBlogProject.Business.csproj", "{868BB1B0-9D91-4AAE-9AC0-828BC4CFF0E9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SEProject.MyBlogProject.WebApi", "SEProject.MyBlogProject.WebApi\SEProject.MyBlogProject.WebApi.csproj", "{1069D85B-A76F-4D3A-8268-003ACC5A5AB0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{868BB1B0-9D91-4AAE-9AC0-828BC4CFF0E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{868BB1B0-9D91-4AAE-9AC0-828BC4CFF0E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{868BB1B0-9D91-4AAE-9AC0-828BC4CFF0E9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1069D85B-A76F-4D3A-8268-003ACC5A5AB0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1069D85B-A76F-4D3A-8268-003ACC5A5AB0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1069D85B-A76F-4D3A-8268-003ACC5A5AB0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1069D85B-A76F-4D3A-8268-003ACC5A5AB0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
