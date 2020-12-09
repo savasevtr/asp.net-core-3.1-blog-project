@@ -1,6 +1,10 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using AutoMapper;
+using Microsoft.AspNetCore.Mvc;
 using SEProject.MyBlogProject.Business.Interfaces;
+using SEProject.MyBlogProject.DTO.DTOs.BlogDtos;
 using SEProject.MyBlogProject.Entities.Concrete;
+using SEProject.MyBlogProject.WebApi.Models;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace SEProject.MyBlogProject.WebApi.Controllers
@@ -10,41 +14,43 @@ namespace SEProject.MyBlogProject.WebApi.Controllers
     public class BlogsController : ControllerBase
     {
         private readonly IBlogService _blogService;
+        private readonly IMapper _mapper;
 
-        public BlogsController(IBlogService blogService)
+        public BlogsController(IBlogService blogService, IMapper mapper)
         {
             _blogService = blogService;
+            _mapper = mapper;
         }
 
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
-            return Ok(await _blogService.GetAllSortedByPostedTimeAsync());
+            return Ok(_mapper.Map<List<BlogListDto>>(await _blogService.GetAllSortedByPostedTimeAsync()));
         }
 
         [HttpGet("{id}")]
         public async Task<IActionResult> GetById(int id)
         {
-            return Ok(await _blogService.FindById(id));
+            return Ok(_mapper.Map<BlogListDto>(await _blogService.FindById(id)));
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create(Blog blog)
+        public async Task<IActionResult> Create(BlogAddModel blogAddModel)
         {
-            await _blogService.AddAsync(blog);
+            await _blogService.AddAsync(_mapper.Map<Blog>(blogAddModel));
 
-            return Created("", blog);
+            return Created("", blogAddModel);
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> Update(int id, Blog blog)
+        public async Task<IActionResult> Update(int id, BlogUpdateModel blogUpdateModel)
         {
-            if (id != blog.Id)
+            if (id != blogUpdateModel.Id)
             {
                 return BadRequest("geçersiz id");
             }
 
-            await _blogService.UpdateAsync(blog);
+            await _blogService.UpdateAsync(_mapper.Map<Blog>(blogUpdateModel));
 
             return NoContent();
         }
