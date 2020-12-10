@@ -32,7 +32,7 @@ namespace SEProject.MyBlogProject.WebApi.Controllers
         [HttpGet("{id}")]
         public async Task<IActionResult> GetById(int id)
         {
-            return Ok(_mapper.Map<BlogListDto>(await _blogService.FindById(id)));
+            return Ok(_mapper.Map<BlogListDto>(await _blogService.FindByIdAsync(id)));
         }
 
         [HttpPost]
@@ -75,7 +75,7 @@ namespace SEProject.MyBlogProject.WebApi.Controllers
             }
             else if (uploadModel.UploadState == UploadState.NotExist)
             {
-                var updatedBlog = await _blogService.FindById(blogUpdateModel.Id);
+                var updatedBlog = await _blogService.FindByIdAsync(blogUpdateModel.Id);
                 blogUpdateModel.ImagePath = updatedBlog.ImagePath;
 
                 await _blogService.UpdateAsync(_mapper.Map<Blog>(blogUpdateModel));

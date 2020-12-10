@@ -69,3 +69,6 @@ C:\Users\SE\source\repos\MyBlogProject\SEProject.MyBlogProject.WebApi\bin\Debug\
 C:\Users\SE\source\repos\MyBlogProject\SEProject.MyBlogProject.WebApi\bin\Debug\netcoreapp3.1\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
 C:\Users\SE\source\repos\MyBlogProject\SEProject.MyBlogProject.WebApi\bin\Debug\netcoreapp3.1\SEProject.MyBlogProject.DTO.dll
 C:\Users\SE\source\repos\MyBlogProject\SEProject.MyBlogProject.WebApi\bin\Debug\netcoreapp3.1\SEProject.MyBlogProject.DTO.pdb
+C:\Users\SE\source\repos\MyBlogProject\SEProject.MyBlogProject.WebApi\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.JsonPatch.dll
+C:\Users\SE\source\repos\MyBlogProject\SEProject.MyBlogProject.WebApi\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+C:\Users\SE\source\repos\MyBlogProject\SEProject.MyBlogProject.WebApi\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll

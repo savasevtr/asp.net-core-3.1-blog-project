@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Newtonsoft.Json;
 using SEProject.MyBlogProject.Business.Containers.MicrosoftIoC;
 
 namespace SEProject.MyBlogProject.WebApi
@@ -22,7 +23,10 @@ namespace SEProject.MyBlogProject.WebApi
         {
             services.AddAutoMapper(typeof(Startup));
             services.AddDependencies();
-            services.AddControllers();
+            services.AddControllers().AddNewtonsoftJson(options =>
+            {
+                options.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
