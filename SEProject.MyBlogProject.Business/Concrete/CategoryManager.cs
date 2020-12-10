@@ -15,7 +15,7 @@ namespace SEProject.MyBlogProject.Business.Concrete
             _genericDal = genericDal;
         }
 
-        public async Task<List<Category>> GetAllSortedById()
+        public async Task<List<Category>> GetAllSortedByIdAsync()
         {
             return await _genericDal.GetAllAsync(I => I.Id);
         }
