@@ -13,5 +13,9 @@
     <ProjectReference Include="..\SEProject.MyBlogProject.DTO\SEProject.MyBlogProject.DTO.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\img\" />
+  </ItemGroup>
+
 
 </Project>

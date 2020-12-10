@@ -37,7 +37,7 @@ namespace SEProject.MyBlogProject.WebApi.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create(BlogAddModel blogAddModel)
+        public async Task<IActionResult> Create([FromForm]BlogAddModel blogAddModel)
         {
             if (blogAddModel.Image != null)
             {
@@ -59,7 +59,7 @@ namespace SEProject.MyBlogProject.WebApi.Controllers
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> Update(int id, BlogUpdateModel blogUpdateModel)
+        public async Task<IActionResult> Update(int id, [FromForm]BlogUpdateModel blogUpdateModel)
         {
             if (id != blogUpdateModel.Id)
             {
