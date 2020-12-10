@@ -34,6 +34,8 @@ namespace SEProject.MyBlogProject.WebApi
             }
 
             app.UseRouting();
+            
+            app.UseStaticFiles();
 
             app.UseAuthorization();
 

@@ -4,7 +4,9 @@ using SEProject.MyBlogProject.Business.Interfaces;
 using SEProject.MyBlogProject.DTO.DTOs.BlogDtos;
 using SEProject.MyBlogProject.Entities.Concrete;
 using SEProject.MyBlogProject.WebApi.Models;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Threading.Tasks;
 
 namespace SEProject.MyBlogProject.WebApi.Controllers
@@ -37,6 +39,20 @@ namespace SEProject.MyBlogProject.WebApi.Controllers
         [HttpPost]
         public async Task<IActionResult> Create(BlogAddModel blogAddModel)
         {
+            if (blogAddModel.Image != null)
+            {
+                if (blogAddModel.Image.ContentType != "image/jpeg")
+                {
+                    return BadRequest("Dosya formatı geçerli değil");
+                }
+
+                var newName = Guid.NewGuid() + Path.GetExtension(blogAddModel.Image.FileName);
+                var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/img" + newName);
+                var stream = new FileStream(path, FileMode.Create);
+                await blogAddModel.Image.CopyToAsync(stream);
+                blogAddModel.ImagePath = newName;
+            }
+
             await _blogService.AddAsync(_mapper.Map<Blog>(blogAddModel));
 
             return Created("", blogAddModel);
@@ -48,6 +64,20 @@ namespace SEProject.MyBlogProject.WebApi.Controllers
             if (id != blogUpdateModel.Id)
             {
                 return BadRequest("geçersiz id");
+            }
+
+            if (blogUpdateModel.Image != null)
+            {
+                if (blogUpdateModel.Image.ContentType != "image/jpeg")
+                {
+                    return BadRequest("Dosya formatı geçerli değil");
+                }
+
+                var newName = Guid.NewGuid() + Path.GetExtension(blogUpdateModel.Image.FileName);
+                var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/img" + newName);
+                var stream = new FileStream(path, FileMode.Create);
+                await blogUpdateModel.Image.CopyToAsync(stream);
+                blogUpdateModel.ImagePath = newName;
             }
 
             await _blogService.UpdateAsync(_mapper.Map<Blog>(blogUpdateModel));
