@@ -5,9 +5,7 @@ using SEProject.MyBlogProject.DTO.DTOs.BlogDtos;
 using SEProject.MyBlogProject.Entities.Concrete;
 using SEProject.MyBlogProject.WebApi.Enums;
 using SEProject.MyBlogProject.WebApi.Models;
-using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Threading.Tasks;
 
 namespace SEProject.MyBlogProject.WebApi.Controllers
@@ -40,7 +38,7 @@ namespace SEProject.MyBlogProject.WebApi.Controllers
         [HttpPost]
         public async Task<IActionResult> Create([FromForm]BlogAddModel blogAddModel)
         {
-            var uploadModel = await UploadFile(blogAddModel.Image, "image/jpeg");
+            var uploadModel = await UploadFileAsync(blogAddModel.Image, "image/jpeg");
 
             if (uploadModel.UploadState == UploadState.Success)
             {
@@ -67,7 +65,7 @@ namespace SEProject.MyBlogProject.WebApi.Controllers
                 return BadRequest("geçersiz id");
             }
 
-            var uploadModel = await UploadFile(blogUpdateModel.Image, "image/jpeg");
+            var uploadModel = await UploadFileAsync(blogUpdateModel.Image, "image/jpeg");
 
             if (uploadModel.UploadState == UploadState.Success)
             {
@@ -77,6 +75,9 @@ namespace SEProject.MyBlogProject.WebApi.Controllers
             }
             else if (uploadModel.UploadState == UploadState.NotExist)
             {
+                var updatedBlog = await _blogService.FindById(blogUpdateModel.Id);
+                blogUpdateModel.ImagePath = updatedBlog.ImagePath;
+
                 await _blogService.UpdateAsync(_mapper.Map<Blog>(blogUpdateModel));
                 return NoContent();
             }
