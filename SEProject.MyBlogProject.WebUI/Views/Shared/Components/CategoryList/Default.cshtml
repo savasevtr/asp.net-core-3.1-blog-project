@@ -1,0 +1,14 @@
+﻿@model List<CategoryListModel>
+
+<div class="card my-4">
+    <h5 class="card-header">Categories</h5>
+    <ul class="list-group">
+        @foreach (var item in Model)
+        {
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                @item.Name
+                <span class="badge badge-primary badge-pill">14</span>
+            </li>
+        }
+    </ul>
+</div>

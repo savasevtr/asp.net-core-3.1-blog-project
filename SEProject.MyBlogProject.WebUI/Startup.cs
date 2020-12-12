@@ -1,12 +1,9 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using SEProject.MyBlogProject.WebUI.ApiServices.Concrete;
+using SEProject.MyBlogProject.WebUI.ApiServices.Interfaces;
 
 namespace SEProject.MyBlogProject.WebUI
 {
@@ -16,6 +13,8 @@ namespace SEProject.MyBlogProject.WebUI
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddHttpClient<IBlogApiService, BlogApiManager>();
+            services.AddHttpClient<ICategoryApiService, CategoryApiManager>();
             services.AddControllersWithViews();
         }
 
