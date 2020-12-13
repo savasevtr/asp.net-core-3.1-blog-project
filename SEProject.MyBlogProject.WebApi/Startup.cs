@@ -9,6 +9,7 @@ using Microsoft.IdentityModel.Tokens;
 using Newtonsoft.Json;
 using SEProject.MyBlogProject.Business.Containers.MicrosoftIoC;
 using SEProject.MyBlogProject.Business.StringInfos;
+using SEProject.MyBlogProject.WebApi.CustomFilters;
 using System;
 using System.Text;
 
@@ -28,6 +29,7 @@ namespace SEProject.MyBlogProject.WebApi
         {
             services.AddAutoMapper(typeof(Startup));
             services.AddDependencies();
+            services.AddScoped(typeof(ValidId<>));
 
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
                 .AddJwtBearer(opt =>
