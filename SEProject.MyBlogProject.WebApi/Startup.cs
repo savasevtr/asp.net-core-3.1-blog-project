@@ -63,6 +63,8 @@ namespace SEProject.MyBlogProject.WebApi
             
             app.UseStaticFiles();
 
+            app.UseAuthentication();
+
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>

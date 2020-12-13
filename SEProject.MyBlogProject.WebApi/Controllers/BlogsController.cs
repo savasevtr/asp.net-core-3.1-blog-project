@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using SEProject.MyBlogProject.Business.Interfaces;
 using SEProject.MyBlogProject.DTO.DTOs.BlogDtos;
@@ -36,6 +37,7 @@ namespace SEProject.MyBlogProject.WebApi.Controllers
         }
 
         [HttpPost]
+        [Authorize]
         public async Task<IActionResult> Create([FromForm]BlogAddModel blogAddModel)
         {
             var uploadModel = await UploadFileAsync(blogAddModel.Image, "image/jpeg");
@@ -58,6 +60,7 @@ namespace SEProject.MyBlogProject.WebApi.Controllers
         }
 
         [HttpPut("{id}")]
+        [Authorize]
         public async Task<IActionResult> Update(int id, [FromForm]BlogUpdateModel blogUpdateModel)
         {
             if (id != blogUpdateModel.Id)
@@ -88,6 +91,7 @@ namespace SEProject.MyBlogProject.WebApi.Controllers
         }
 
         [HttpDelete("{id}")]
+        [Authorize]
         public async Task<IActionResult> Delete(int id)
         {
             await _blogService.RemoveAsync(new Blog { Id = id });

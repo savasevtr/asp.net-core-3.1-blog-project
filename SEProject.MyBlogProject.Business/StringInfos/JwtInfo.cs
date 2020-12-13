@@ -5,5 +5,6 @@
         public const string Issuer = "http://localhost:56977";
         public const string Audience = "http://localhost:5000";
         public const string SecurityKey = "seproject-*-sepr";
+        public const double Expires = 60;
     }
 }
