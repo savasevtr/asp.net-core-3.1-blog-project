@@ -11,11 +11,13 @@ namespace SEProject.MyBlogProject.Business.Concrete
     {
         private readonly IGenericDal<Blog> _genericDal;
         private readonly IGenericDal<CategoryBlog> _categoryBlogService;
+        private readonly IBlogDal _blogDal;
         
-        public BlogManager(IGenericDal<Blog> genericDal, IGenericDal<CategoryBlog> categoryBlogService) : base(genericDal)
+        public BlogManager(IGenericDal<Blog> genericDal, IGenericDal<CategoryBlog> categoryBlogService, IBlogDal blogDal) : base(genericDal)
         {
             _genericDal = genericDal;
             _categoryBlogService = categoryBlogService;
+            _blogDal = blogDal;
         }
 
         public async Task<List<Blog>> GetAllSortedByPostedTimeAsync()
@@ -45,6 +47,11 @@ namespace SEProject.MyBlogProject.Business.Concrete
             {
                 await _categoryBlogService.RemoveAsync(categoryBlog);
             }
+        }
+
+        public async Task<List<Blog>> GetAllByCategoryIdAsync(int categoryId)
+        {
+            return await _blogDal.GetAllByCategoryIdAsync(categoryId);
         }
     }
 }
