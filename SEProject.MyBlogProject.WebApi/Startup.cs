@@ -1,11 +1,16 @@
 using AutoMapper;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.IdentityModel.Tokens;
 using Newtonsoft.Json;
 using SEProject.MyBlogProject.Business.Containers.MicrosoftIoC;
+using SEProject.MyBlogProject.Business.StringInfos;
+using System;
+using System.Text;
 
 namespace SEProject.MyBlogProject.WebApi
 {
@@ -23,6 +28,23 @@ namespace SEProject.MyBlogProject.WebApi
         {
             services.AddAutoMapper(typeof(Startup));
             services.AddDependencies();
+
+            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+                .AddJwtBearer(opt =>
+                {
+                    opt.RequireHttpsMetadata = false;
+                    opt.TokenValidationParameters = new TokenValidationParameters
+                    {
+                        ValidIssuer = JwtInfo.Issuer,
+                        ValidAudience = JwtInfo.Audience,
+                        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(JwtInfo.SecurityKey)),
+                        ValidateLifetime = true,
+                        ValidateIssuer = true,
+                        ValidateAudience = true,
+                        ClockSkew = TimeSpan.Zero
+                    };
+                });
+
             services.AddControllers().AddNewtonsoftJson(options =>
             {
                 options.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;

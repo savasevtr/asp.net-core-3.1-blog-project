@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "sO5PdL/kvuI9y5NJel+oUIabtdB9dBiZ0265vsplz8PJNqqDqJQSIzVr9q9T+4RqnuvZczyA1LeyDtuciyuu5Q==",
+  "dgSpecHash": "NS6N7LUkOflqtq68U1Hsa1kUuPpQeadJ6HFHgJTUUKBbeUxOewcxUJmqoiwWJT9IS74Xh8/dyINzEcFHaZVIeA==",
   "success": true,
   "projectFilePath": "C:\\Users\\SE\\source\\repos\\MyBlogProject\\SEProject.MyBlogProject.WebApi\\SEProject.MyBlogProject.WebApi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\SE\\.nuget\\packages\\automapper\\10.1.0\\automapper.10.1.0.nupkg.sha512",
     "C:\\Users\\SE\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\8.1.0\\automapper.extensions.microsoft.dependencyinjection.8.1.0.nupkg.sha512",
+    "C:\\Users\\SE\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\3.1.10\\microsoft.aspnetcore.authentication.jwtbearer.3.1.10.nupkg.sha512",
     "C:\\Users\\SE\\.nuget\\packages\\microsoft.aspnetcore.jsonpatch\\3.1.10\\microsoft.aspnetcore.jsonpatch.3.1.10.nupkg.sha512",
     "C:\\Users\\SE\\.nuget\\packages\\microsoft.aspnetcore.mvc.newtonsoftjson\\3.1.10\\microsoft.aspnetcore.mvc.newtonsoftjson.3.1.10.nupkg.sha512",
     "C:\\Users\\SE\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
