@@ -1,11 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "fOPptitzk3yKXPTEOn0CJwD3gDO0QURpKrqvWgT3vzmPspQUmXxKlFM95f7Gxt8RCAPtnFH0LSdsAJpy98q5SQ==",
+  "dgSpecHash": "lQfB2gNiXqp240j8DEc7uN3mhpLqLzcM46WIYkgPbTNEDU3cuzEsOFA6k7j+bzvj/dQJdGmqPhMRVLW6Re5EQg==",
   "success": true,
   "projectFilePath": "C:\\Users\\SE\\source\\repos\\MyBlogProject\\SEProject.MyBlogProject.WebApi\\SEProject.MyBlogProject.WebApi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\SE\\.nuget\\packages\\automapper\\10.1.0\\automapper.10.1.0.nupkg.sha512",
     "C:\\Users\\SE\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\8.1.0\\automapper.extensions.microsoft.dependencyinjection.8.1.0.nupkg.sha512",
+    "C:\\Users\\SE\\.nuget\\packages\\fluentvalidation\\9.3.0\\fluentvalidation.9.3.0.nupkg.sha512",
+    "C:\\Users\\SE\\.nuget\\packages\\fluentvalidation.aspnetcore\\9.3.0\\fluentvalidation.aspnetcore.9.3.0.nupkg.sha512",
+    "C:\\Users\\SE\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\9.3.0\\fluentvalidation.dependencyinjectionextensions.9.3.0.nupkg.sha512",
     "C:\\Users\\SE\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\3.1.10\\microsoft.aspnetcore.authentication.jwtbearer.3.1.10.nupkg.sha512",
     "C:\\Users\\SE\\.nuget\\packages\\microsoft.aspnetcore.jsonpatch\\3.1.10\\microsoft.aspnetcore.jsonpatch.3.1.10.nupkg.sha512",
     "C:\\Users\\SE\\.nuget\\packages\\microsoft.aspnetcore.mvc.newtonsoftjson\\3.1.10\\microsoft.aspnetcore.mvc.newtonsoftjson.3.1.10.nupkg.sha512",
