@@ -30,6 +30,9 @@
             "projectReferences": {
               "C:\\Users\\SE\\source\\repos\\MyBlogProject\\SEProject.MyBlogProject.DataAccess\\SEProject.MyBlogProject.DataAccess.csproj": {
                 "projectPath": "C:\\Users\\SE\\source\\repos\\MyBlogProject\\SEProject.MyBlogProject.DataAccess\\SEProject.MyBlogProject.DataAccess.csproj"
+              },
+              "C:\\Users\\SE\\source\\repos\\MyBlogProject\\SEProject.MyBlogProject.DTO\\SEProject.MyBlogProject.DTO.csproj": {
+                "projectPath": "C:\\Users\\SE\\source\\repos\\MyBlogProject\\SEProject.MyBlogProject.DTO\\SEProject.MyBlogProject.DTO.csproj"
               }
             }
           }

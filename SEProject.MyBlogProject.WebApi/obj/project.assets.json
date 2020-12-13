@@ -1452,6 +1452,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.1",
         "dependencies": {
+          "SEProject.MyBlogProject.DTO": "1.0.0",
           "SEProject.MyBlogProject.DataAccess": "1.0.0"
         },
         "compile": {

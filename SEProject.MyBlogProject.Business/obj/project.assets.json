@@ -1498,6 +1498,16 @@
           "bin/placeholder/SEProject.MyBlogProject.DataAccess.dll": {}
         }
       },
+      "SEProject.MyBlogProject.DTO/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "compile": {
+          "bin/placeholder/SEProject.MyBlogProject.DTO.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/SEProject.MyBlogProject.DTO.dll": {}
+        }
+      },
       "SEProject.MyBlogProject.Entities/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.1",
@@ -5725,6 +5735,11 @@
       "path": "../SEProject.MyBlogProject.DataAccess/SEProject.MyBlogProject.DataAccess.csproj",
       "msbuildProject": "../SEProject.MyBlogProject.DataAccess/SEProject.MyBlogProject.DataAccess.csproj"
     },
+    "SEProject.MyBlogProject.DTO/1.0.0": {
+      "type": "project",
+      "path": "../SEProject.MyBlogProject.DTO/SEProject.MyBlogProject.DTO.csproj",
+      "msbuildProject": "../SEProject.MyBlogProject.DTO/SEProject.MyBlogProject.DTO.csproj"
+    },
     "SEProject.MyBlogProject.Entities/1.0.0": {
       "type": "project",
       "path": "../SEProject.MyBlogProject.Entities/SEProject.MyBlogProject.Entities.csproj",
@@ -5733,6 +5748,7 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
+      "SEProject.MyBlogProject.DTO >= 1.0.0",
       "SEProject.MyBlogProject.DataAccess >= 1.0.0"
     ]
   },
@@ -5765,6 +5781,9 @@
           "projectReferences": {
             "C:\\Users\\SE\\source\\repos\\MyBlogProject\\SEProject.MyBlogProject.DataAccess\\SEProject.MyBlogProject.DataAccess.csproj": {
               "projectPath": "C:\\Users\\SE\\source\\repos\\MyBlogProject\\SEProject.MyBlogProject.DataAccess\\SEProject.MyBlogProject.DataAccess.csproj"
+            },
+            "C:\\Users\\SE\\source\\repos\\MyBlogProject\\SEProject.MyBlogProject.DTO\\SEProject.MyBlogProject.DTO.csproj": {
+              "projectPath": "C:\\Users\\SE\\source\\repos\\MyBlogProject\\SEProject.MyBlogProject.DTO\\SEProject.MyBlogProject.DTO.csproj"
             }
           }
         }

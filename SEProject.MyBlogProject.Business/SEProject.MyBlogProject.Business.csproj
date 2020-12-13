@@ -10,6 +10,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\SEProject.MyBlogProject.DataAccess\SEProject.MyBlogProject.DataAccess.csproj" />
+    <ProjectReference Include="..\SEProject.MyBlogProject.DTO\SEProject.MyBlogProject.DTO.csproj" />
   </ItemGroup>
 
 </Project>
