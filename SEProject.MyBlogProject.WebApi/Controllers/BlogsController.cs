@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using SEProject.MyBlogProject.Business.Interfaces;
 using SEProject.MyBlogProject.DTO.DTOs.BlogDtos;
+using SEProject.MyBlogProject.DTO.DTOs.CategoryBlogDtos;
 using SEProject.MyBlogProject.Entities.Concrete;
 using SEProject.MyBlogProject.WebApi.Enums;
 using SEProject.MyBlogProject.WebApi.Models;
@@ -95,6 +96,22 @@ namespace SEProject.MyBlogProject.WebApi.Controllers
         public async Task<IActionResult> Delete(int id)
         {
             await _blogService.RemoveAsync(new Blog { Id = id });
+
+            return NoContent();
+        }
+
+        [HttpPost("[action]")]
+        public async Task<IActionResult> AddToCategory(CategoryBlogDto categoryBlogDto)
+        {
+            await _blogService.AddToCategoryAsync(categoryBlogDto);
+
+            return Created("", categoryBlogDto);
+        }
+
+        [HttpDelete("[action]")]
+        public async Task<IActionResult> RemoveFromCategory(CategoryBlogDto categoryBlogDto)
+        {
+            await _blogService.RemoveFromCategoryAsync(categoryBlogDto);
 
             return NoContent();
         }
