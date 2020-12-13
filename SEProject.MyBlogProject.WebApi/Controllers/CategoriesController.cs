@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using SEProject.MyBlogProject.Business.Interfaces;
 using SEProject.MyBlogProject.DTO.DTOs.CategoryDtos;
 using SEProject.MyBlogProject.Entities.Concrete;
+using SEProject.MyBlogProject.WebApi.CustomFilters;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -36,6 +37,7 @@ namespace SEProject.MyBlogProject.WebApi.Controllers
 
         [HttpPost]
         [Authorize]
+        [ValidModel]
         public async Task<IActionResult> Create(CategoryAddDto categoryAddDto)
         {
             await _categoryService.AddAsync(_mapper.Map<Category>(categoryAddDto));
@@ -45,6 +47,7 @@ namespace SEProject.MyBlogProject.WebApi.Controllers
 
         [HttpPut("{id}")]
         [Authorize]
+        [ValidModel]
         public async Task<IActionResult> Update(int id, CategoryUpdateDto categoryUpdateDto)
         {
             if (id != categoryUpdateDto.Id)
@@ -64,6 +67,27 @@ namespace SEProject.MyBlogProject.WebApi.Controllers
             await _categoryService.RemoveAsync(new Category { Id = id });
 
             return NoContent();
+        }
+
+        [HttpGet("[action]")]
+        public async Task<IActionResult> GetWithBlogsCount()
+        {
+            var categories = await _categoryService.GetAllWithCategoryBlogsAsync();
+
+            List<CategoryWithBlogsCountDto> listCategory = new List<CategoryWithBlogsCountDto>();
+
+            foreach (var category in categories)
+            {
+                CategoryWithBlogsCountDto categoryWithBlogsCountDto = new CategoryWithBlogsCountDto
+                {
+                    Category = category,
+                    BlogsCount = category.CategoryBlogs.Count
+                };
+
+                listCategory.Add(categoryWithBlogsCountDto);
+            }
+
+            return Ok(listCategory);
         }
     }
 }

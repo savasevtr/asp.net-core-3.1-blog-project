@@ -5,6 +5,7 @@ using SEProject.MyBlogProject.Business.Interfaces;
 using SEProject.MyBlogProject.DTO.DTOs.BlogDtos;
 using SEProject.MyBlogProject.DTO.DTOs.CategoryBlogDtos;
 using SEProject.MyBlogProject.Entities.Concrete;
+using SEProject.MyBlogProject.WebApi.CustomFilters;
 using SEProject.MyBlogProject.WebApi.Enums;
 using SEProject.MyBlogProject.WebApi.Models;
 using System.Collections.Generic;
@@ -39,6 +40,7 @@ namespace SEProject.MyBlogProject.WebApi.Controllers
 
         [HttpPost]
         [Authorize]
+        [ValidModel]
         public async Task<IActionResult> Create([FromForm]BlogAddModel blogAddModel)
         {
             var uploadModel = await UploadFileAsync(blogAddModel.Image, "image/jpeg");
@@ -62,6 +64,7 @@ namespace SEProject.MyBlogProject.WebApi.Controllers
 
         [HttpPut("{id}")]
         [Authorize]
+        [ValidModel]
         public async Task<IActionResult> Update(int id, [FromForm]BlogUpdateModel blogUpdateModel)
         {
             if (id != blogUpdateModel.Id)
@@ -101,6 +104,7 @@ namespace SEProject.MyBlogProject.WebApi.Controllers
         }
 
         [HttpPost("[action]")]
+        [ValidModel]
         public async Task<IActionResult> AddToCategory(CategoryBlogDto categoryBlogDto)
         {
             await _blogService.AddToCategoryAsync(categoryBlogDto);

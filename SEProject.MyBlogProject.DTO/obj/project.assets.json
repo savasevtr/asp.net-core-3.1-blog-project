@@ -1,11 +1,30 @@
 {
   "version": 3,
   "targets": {
-    ".NETCoreApp,Version=v3.1": {}
+    ".NETCoreApp,Version=v3.1": {
+      "SEProject.MyBlogProject.Entities/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "compile": {
+          "bin/placeholder/SEProject.MyBlogProject.Entities.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/SEProject.MyBlogProject.Entities.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "SEProject.MyBlogProject.Entities/1.0.0": {
+      "type": "project",
+      "path": "../SEProject.MyBlogProject.Entities/SEProject.MyBlogProject.Entities.csproj",
+      "msbuildProject": "../SEProject.MyBlogProject.Entities/SEProject.MyBlogProject.Entities.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    ".NETCoreApp,Version=v3.1": []
+    ".NETCoreApp,Version=v3.1": [
+      "SEProject.MyBlogProject.Entities >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\SE\\.nuget\\packages\\": {}
@@ -33,7 +52,11 @@
       "frameworks": {
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\SE\\source\\repos\\MyBlogProject\\SEProject.MyBlogProject.Entities\\SEProject.MyBlogProject.Entities.csproj": {
+              "projectPath": "C:\\Users\\SE\\source\\repos\\MyBlogProject\\SEProject.MyBlogProject.Entities\\SEProject.MyBlogProject.Entities.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

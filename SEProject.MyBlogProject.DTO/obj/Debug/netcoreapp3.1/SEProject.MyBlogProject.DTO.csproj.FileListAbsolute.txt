@@ -7,3 +7,6 @@ C:\Users\SE\source\repos\MyBlogProject\SEProject.MyBlogProject.DTO\obj\Debug\net
 C:\Users\SE\source\repos\MyBlogProject\SEProject.MyBlogProject.DTO\obj\Debug\netcoreapp3.1\SEProject.MyBlogProject.DTO.csproj.CoreCompileInputs.cache
 C:\Users\SE\source\repos\MyBlogProject\SEProject.MyBlogProject.DTO\obj\Debug\netcoreapp3.1\SEProject.MyBlogProject.DTO.dll
 C:\Users\SE\source\repos\MyBlogProject\SEProject.MyBlogProject.DTO\obj\Debug\netcoreapp3.1\SEProject.MyBlogProject.DTO.pdb
+C:\Users\SE\source\repos\MyBlogProject\SEProject.MyBlogProject.DTO\bin\Debug\netcoreapp3.1\SEProject.MyBlogProject.Entities.dll
+C:\Users\SE\source\repos\MyBlogProject\SEProject.MyBlogProject.DTO\bin\Debug\netcoreapp3.1\SEProject.MyBlogProject.Entities.pdb
+C:\Users\SE\source\repos\MyBlogProject\SEProject.MyBlogProject.DTO\obj\Debug\netcoreapp3.1\SEProject.MyBlogProject.DTO.csproj.CopyComplete

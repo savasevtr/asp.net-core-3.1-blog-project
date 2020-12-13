@@ -168,7 +168,11 @@
         "frameworks": {
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Users\\SE\\source\\repos\\MyBlogProject\\SEProject.MyBlogProject.Entities\\SEProject.MyBlogProject.Entities.csproj": {
+                "projectPath": "C:\\Users\\SE\\source\\repos\\MyBlogProject\\SEProject.MyBlogProject.Entities\\SEProject.MyBlogProject.Entities.csproj"
+              }
+            }
           }
         },
         "warningProperties": {

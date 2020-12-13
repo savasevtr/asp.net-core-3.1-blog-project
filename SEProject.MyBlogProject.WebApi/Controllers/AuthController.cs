@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using SEProject.MyBlogProject.Business.Interfaces;
 using SEProject.MyBlogProject.Business.Utilities.JwtTool;
 using SEProject.MyBlogProject.DTO.DTOs.AppUserDtos;
+using SEProject.MyBlogProject.WebApi.CustomFilters;
 using System.Threading.Tasks;
 
 namespace SEProject.MyBlogProject.WebApi.Controllers
@@ -21,6 +22,7 @@ namespace SEProject.MyBlogProject.WebApi.Controllers
         }
 
         [HttpPost]
+        [ValidModel]
         public async Task<IActionResult> SingIn(AppUserLoginDto appUserLoginDto)
         {
             var user = await _appUserService.CheckUserAsync(appUserLoginDto);

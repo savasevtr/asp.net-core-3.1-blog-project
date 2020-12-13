@@ -12,3 +12,5 @@ C:\Users\SE\source\repos\MyBlogProject\SEProject.MyBlogProject.Business\obj\Debu
 C:\Users\SE\source\repos\MyBlogProject\SEProject.MyBlogProject.Business\obj\Debug\netcoreapp3.1\SEProject.MyBlogProject.Business.csproj.CopyComplete
 C:\Users\SE\source\repos\MyBlogProject\SEProject.MyBlogProject.Business\obj\Debug\netcoreapp3.1\SEProject.MyBlogProject.Business.dll
 C:\Users\SE\source\repos\MyBlogProject\SEProject.MyBlogProject.Business\obj\Debug\netcoreapp3.1\SEProject.MyBlogProject.Business.pdb
+C:\Users\SE\source\repos\MyBlogProject\SEProject.MyBlogProject.Business\bin\Debug\netcoreapp3.1\SEProject.MyBlogProject.DTO.dll
+C:\Users\SE\source\repos\MyBlogProject\SEProject.MyBlogProject.Business\bin\Debug\netcoreapp3.1\SEProject.MyBlogProject.DTO.pdb

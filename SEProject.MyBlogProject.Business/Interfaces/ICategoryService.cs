@@ -7,5 +7,6 @@ namespace SEProject.MyBlogProject.Business.Interfaces
     public interface ICategoryService : IGenericService<Category>
     {
         Task<List<Category>> GetAllSortedByIdAsync();
+        Task<List<Category>> GetAllWithCategoryBlogsAsync();
     }
 }

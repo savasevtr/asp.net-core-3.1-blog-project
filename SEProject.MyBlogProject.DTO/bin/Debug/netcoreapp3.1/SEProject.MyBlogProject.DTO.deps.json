@@ -7,14 +7,27 @@
   "targets": {
     ".NETCoreApp,Version=v3.1": {
       "SEProject.MyBlogProject.DTO/1.0.0": {
+        "dependencies": {
+          "SEProject.MyBlogProject.Entities": "1.0.0"
+        },
         "runtime": {
           "SEProject.MyBlogProject.DTO.dll": {}
+        }
+      },
+      "SEProject.MyBlogProject.Entities/1.0.0": {
+        "runtime": {
+          "SEProject.MyBlogProject.Entities.dll": {}
         }
       }
     }
   },
   "libraries": {
     "SEProject.MyBlogProject.DTO/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "SEProject.MyBlogProject.Entities/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
