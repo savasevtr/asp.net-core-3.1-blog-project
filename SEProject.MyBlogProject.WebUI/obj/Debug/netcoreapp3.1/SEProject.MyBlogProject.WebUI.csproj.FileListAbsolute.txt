@@ -107,3 +107,4 @@ C:\Users\SE\source\repos\MyBlogProject\SEProject.MyBlogProject.WebUI\obj\Debug\n
 C:\Users\SE\source\repos\MyBlogProject\SEProject.MyBlogProject.WebUI\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout.cshtml.g.cs
 C:\Users\SE\source\repos\MyBlogProject\SEProject.MyBlogProject.WebUI\bin\Debug\netcoreapp3.1\libman.json
 C:\Users\SE\source\repos\MyBlogProject\SEProject.MyBlogProject.WebUI\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\CategoryList\Default.cshtml.g.cs
+C:\Users\SE\source\repos\MyBlogProject\SEProject.MyBlogProject.WebUI\obj\Debug\netcoreapp3.1\Razor\Views\Home\BlogDetails.cshtml.g.cs

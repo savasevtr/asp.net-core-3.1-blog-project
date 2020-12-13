@@ -17,5 +17,10 @@ namespace SEProject.MyBlogProject.WebUI.Controllers
         {
             return View(await _blogApiService.GetAllAsync());
         }
+
+        public async Task<IActionResult> BlogDetails(int id)
+        {
+            return View(await _blogApiService.GetByIdAsync(id));
+        }
     }
 }
