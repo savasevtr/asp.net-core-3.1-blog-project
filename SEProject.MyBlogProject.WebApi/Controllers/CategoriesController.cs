@@ -83,7 +83,8 @@ namespace SEProject.MyBlogProject.WebApi.Controllers
             {
                 CategoryWithBlogsCountDto categoryWithBlogsCountDto = new CategoryWithBlogsCountDto
                 {
-                    Category = category,
+                    CategoryId = category.Id,
+                    CategoryName = category.Name,
                     BlogsCount = category.CategoryBlogs.Count
                 };
 
