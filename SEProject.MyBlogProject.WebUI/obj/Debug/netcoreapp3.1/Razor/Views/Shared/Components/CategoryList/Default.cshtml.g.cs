@@ -13,7 +13,7 @@ namespace SEProject.MyBlogProject.WebUI.Models.Shared.Components.CategoryList
     using Microsoft.AspNetCore.Mvc.Rendering;
     using Microsoft.AspNetCore.Mvc.ViewFeatures;
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"c13c7c1c358c4f092a69cf8165d5fd293056ad59", @"/Views/Shared/Components/CategoryList/Default.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"184c402655a9a83e6be9211473fa3a33c58ac9d5", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"b43197f5a0d9ad9865d9c11a6238864783202628", @"/Views/_ViewImports.cshtml")]
     public class Views_Shared_Components_CategoryList_Default : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<List<CategoryListModel>>
     {
         #pragma warning disable 1998

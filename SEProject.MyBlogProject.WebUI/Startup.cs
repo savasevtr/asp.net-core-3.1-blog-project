@@ -15,6 +15,7 @@ namespace SEProject.MyBlogProject.WebUI
         {
             services.AddHttpClient<IBlogApiService, BlogApiManager>();
             services.AddHttpClient<ICategoryApiService, CategoryApiManager>();
+            services.AddHttpClient<IImageApiService, ImageApiManager>();
             services.AddControllersWithViews();
         }
 
