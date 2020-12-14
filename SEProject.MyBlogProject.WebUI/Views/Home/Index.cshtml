@@ -1,27 +1,29 @@
 ﻿@model List<BlogListModel>
 
+
+@if (ViewBag.ActiveCategory != null)
+{
 <h1 class="my-4">
-    Home Page
+    @ViewBag.ActiveCategory
     <small>Posts</small>
 </h1>
-
+}
 
 @foreach (var item in Model)
 {
-    <div class="card mb-4">
+<div class="card mb-4">
 
-        <getblogimage id="@item.Id" class-name="card-img-top"></getblogimage>
-        
-        <div class="card-body">
-            <h2 class="card-title">@item.Title</h2>
-            <p class="card-text">@item.ShortDescription</p>
-            <a asp-controller="Home" asp-action="BlogDetails" asp-route-id="@item.Id" class="btn btn-primary">Read More &rarr;</a>
-        </div>
+    <getblogimage id="@item.Id" class-name="card-img-top"></getblogimage>
 
-        <div class="card-footer text-muted">
-            Posted on @item.PostedTime.ToLongDateString()
-            <a href="#">Start Bootstrap</a>
-        </div>
-
+    <div class="card-body">
+        <h2 class="card-title">@item.Title</h2>
+        <p class="card-text">@item.ShortDescription</p>
+        <a asp-controller="Home" asp-action="BlogDetails" asp-route-id="@item.Id" class="btn btn-primary">Read More &rarr;</a>
     </div>
-}
+
+    <div class="card-footer text-muted">
+        Posted on @item.PostedTime.ToLongDateString()
+        <a href="#">Start Bootstrap</a>
+    </div>
+
+</div>}
