@@ -1,12 +1,8 @@
 ﻿@model List<BlogListModel>
 
-
 @if (ViewBag.ActiveCategory != null)
 {
-<h1 class="my-4">
-    @ViewBag.ActiveCategory
-    <small>Posts</small>
-</h1>
+    @await Component.InvokeAsync("GetCategoryName", new { @categoryId = (int)ViewBag.ActiveCategory })
 }
 
 @foreach (var item in Model)
