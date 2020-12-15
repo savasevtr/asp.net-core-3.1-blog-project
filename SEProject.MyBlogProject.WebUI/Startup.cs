@@ -13,9 +13,12 @@ namespace SEProject.MyBlogProject.WebUI
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddHttpContextAccessor();
+            services.AddSession();
             services.AddHttpClient<IBlogApiService, BlogApiManager>();
             services.AddHttpClient<ICategoryApiService, CategoryApiManager>();
             services.AddHttpClient<IImageApiService, ImageApiManager>();
+            services.AddHttpClient<IAuthApiService, AuthApiManager>();
             services.AddControllersWithViews();
         }
 
@@ -27,10 +30,9 @@ namespace SEProject.MyBlogProject.WebUI
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseSession();
             app.UseRouting();
-
             app.UseStaticFiles();
-
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapDefaultControllerRoute();

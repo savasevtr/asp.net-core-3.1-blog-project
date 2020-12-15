@@ -109,3 +109,4 @@ C:\Users\SE\source\repos\MyBlogProject\SEProject.MyBlogProject.WebUI\bin\Debug\n
 C:\Users\SE\source\repos\MyBlogProject\SEProject.MyBlogProject.WebUI\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\CategoryList\Default.cshtml.g.cs
 C:\Users\SE\source\repos\MyBlogProject\SEProject.MyBlogProject.WebUI\obj\Debug\netcoreapp3.1\Razor\Views\Home\BlogDetails.cshtml.g.cs
 C:\Users\SE\source\repos\MyBlogProject\SEProject.MyBlogProject.WebUI\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\GetCategoryName\Default.cshtml.g.cs
+C:\Users\SE\source\repos\MyBlogProject\SEProject.MyBlogProject.WebUI\obj\Debug\netcoreapp3.1\Razor\Views\Account\SignIn.cshtml.g.cs

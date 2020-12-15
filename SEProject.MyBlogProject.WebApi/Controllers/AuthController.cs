@@ -21,7 +21,7 @@ namespace SEProject.MyBlogProject.WebApi.Controllers
             _jwtService = jwtService;
         }
 
-        [HttpPost]
+        [HttpPost("[action]")]
         [ValidModel]
         public async Task<IActionResult> SingIn(AppUserLoginDto appUserLoginDto)
         {
