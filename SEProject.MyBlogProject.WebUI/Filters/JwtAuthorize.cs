@@ -17,7 +17,7 @@ namespace SEProject.MyBlogProject.WebUI.Filters
 
             if (string.IsNullOrWhiteSpace(token))
             {
-                context.Result = new RedirectToActionResult("SignIn", "Account", null);
+                context.Result = new RedirectToActionResult("SignIn", "Account", new { @area = "" });
             }
             else
             {
@@ -35,7 +35,7 @@ namespace SEProject.MyBlogProject.WebUI.Filters
                 }
                 else
                 {
-                    context.Result = new RedirectToActionResult("SignIn", "Account", null);
+                    context.Result = new RedirectToActionResult("SignIn", "Account", new { @area = "" });
                 }
             }
         }
