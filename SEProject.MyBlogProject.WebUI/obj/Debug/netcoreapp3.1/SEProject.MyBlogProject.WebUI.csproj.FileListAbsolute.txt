@@ -114,3 +114,5 @@ C:\Users\SE\source\repos\MyBlogProject\SEProject.MyBlogProject.WebUI\obj\Debug\n
 C:\Users\SE\source\repos\MyBlogProject\SEProject.MyBlogProject.WebUI\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Shared\_Layout.cshtml.g.cs
 C:\Users\SE\source\repos\MyBlogProject\SEProject.MyBlogProject.WebUI\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\_ViewImports.cshtml.g.cs
 C:\Users\SE\source\repos\MyBlogProject\SEProject.MyBlogProject.WebUI\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\_ViewStart.cshtml.g.cs
+C:\Users\SE\source\repos\MyBlogProject\SEProject.MyBlogProject.WebUI\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Blog\Index.cshtml.g.cs
+C:\Users\SE\source\repos\MyBlogProject\SEProject.MyBlogProject.WebUI\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Blog\Create.cshtml.g.cs

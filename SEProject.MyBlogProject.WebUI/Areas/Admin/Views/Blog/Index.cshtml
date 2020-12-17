@@ -1,0 +1,31 @@
+﻿@model List<BlogListModel>
+@{
+    ViewData["Title"] = "Blog Listesi";
+}
+
+<h1 class="mt-4">Blog Listesi</h1>
+
+<a class="btn btn-info btn-sm my-4" asp-area="Admin" asp-controller="Blog" asp-action="Create">Yeni Blog Yaz</a>
+
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Başlık</th>
+            <th>İşlem</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>@item.Id</td>
+            <td>@item.Title</td>
+            <td>
+                <a href="#" class="btn btn-outline-primary btn-sm">Düzenle</a>
+                <a href="#" class="btn btn-outline-danger btn-sm">Sil</a>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>

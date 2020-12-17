@@ -9,5 +9,6 @@ namespace SEProject.MyBlogProject.WebUI.ApiServices.Interfaces
         Task<List<BlogListModel>> GetAllAsync();
         Task<BlogListModel> GetByIdAsync(int id);
         Task<List<BlogListModel>> GetAllByCategoryId(int id);
+        Task AddAsync(BlogAddModel model);
     }
 }
