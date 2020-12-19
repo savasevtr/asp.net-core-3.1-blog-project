@@ -13,5 +13,6 @@ namespace SEProject.MyBlogProject.Business.Interfaces
         Task<List<Blog>> GetAllByCategoryIdAsync(int categoryId);
         Task<List<Category>> GetCategoriesAsync(int blogId);
         Task<List<Blog>> GetLastFiveAsync();
+        Task<List<Blog>> SearchAsync(string searchString); 
     }
 }
