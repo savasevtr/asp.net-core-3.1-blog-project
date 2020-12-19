@@ -3,6 +3,7 @@ using Microsoft.Extensions.DependencyInjection;
 using SEProject.MyBlogProject.Business.Concrete;
 using SEProject.MyBlogProject.Business.Interfaces;
 using SEProject.MyBlogProject.Business.Utilities.JwtTool;
+using SEProject.MyBlogProject.Business.Utilities.LogTool;
 using SEProject.MyBlogProject.Business.ValidationRules.FluentValidation;
 using SEProject.MyBlogProject.DataAccess.Concrete.EntityFrameworkCore.Repositories;
 using SEProject.MyBlogProject.DataAccess.Interfaces;
@@ -32,6 +33,8 @@ namespace SEProject.MyBlogProject.Business.Containers.MicrosoftIoC
             services.AddScoped<ICommentDal, EfCommentRepository>();
 
             services.AddScoped<IJwtService, JwtManager>();
+
+            services.AddScoped<ICustomLogger, NLogAdapter>();
 
             services.AddTransient<IValidator<AppUserLoginDto>, AppUserLoginValidator>();
             services.AddTransient<IValidator<CategoryAddDto>, CategoryAddValidator>();

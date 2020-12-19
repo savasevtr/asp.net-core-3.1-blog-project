@@ -62,6 +62,8 @@ namespace SEProject.MyBlogProject.WebApi
                 app.UseDeveloperExceptionPage();
             }
 
+            // app.UseExceptionHandler("/Error");
+
             app.UseRouting();
             
             app.UseStaticFiles();

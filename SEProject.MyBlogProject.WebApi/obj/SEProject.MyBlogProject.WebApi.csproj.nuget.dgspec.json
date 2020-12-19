@@ -50,6 +50,10 @@
             "FluentValidation.AspNetCore": {
               "target": "Package",
               "version": "[9.3.0, )"
+            },
+            "NLog": {
+              "target": "Package",
+              "version": "[4.7.2, )"
             }
           },
           "imports": [

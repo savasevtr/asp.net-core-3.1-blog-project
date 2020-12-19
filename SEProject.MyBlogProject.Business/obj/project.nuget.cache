@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "KRPQegC1tymAMQp0ATC4nC/8k4ic8kXs7r8On5jKeWcHrtvEqf1xTPhYFNwakXriQrKgpJLRLH5/yRiOFVYQgg==",
+  "dgSpecHash": "yR6KiHsSX/A1M69T78AFQm3BSZu8t62O6TKaHm1MPCQijvrwYd/ibzkgWFMmHf8F4JebJLx3W6/WElHCbCzabQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\SE\\source\\repos\\MyBlogProject\\SEProject.MyBlogProject.Business\\SEProject.MyBlogProject.Business.csproj",
   "expectedPackageFiles": [
@@ -35,6 +35,7 @@
     "C:\\Users\\SE\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
     "C:\\Users\\SE\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
     "C:\\Users\\SE\\.nuget\\packages\\newtonsoft.json\\10.0.1\\newtonsoft.json.10.0.1.nupkg.sha512",
+    "C:\\Users\\SE\\.nuget\\packages\\nlog\\4.7.2\\nlog.4.7.2.nupkg.sha512",
     "C:\\Users\\SE\\.nuget\\packages\\runtime.native.system\\4.3.0\\runtime.native.system.4.3.0.nupkg.sha512",
     "C:\\Users\\SE\\.nuget\\packages\\system.collections\\4.3.0\\system.collections.4.3.0.nupkg.sha512",
     "C:\\Users\\SE\\.nuget\\packages\\system.collections.concurrent\\4.3.0\\system.collections.concurrent.4.3.0.nupkg.sha512",

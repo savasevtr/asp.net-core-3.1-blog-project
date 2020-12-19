@@ -17,8 +17,8 @@ namespace SEProject.MyBlogProject.DataAccess.Concrete.EntityFrameworkCore.Reposi
             var blogs = await context.Blogs
                  .Join(context.CategoryBlogs, b => b.Id, cb => cb.BlogId, (blog, categoryBlog) => new
                  {
-                     blog = blog,
-                     categoryBlog = categoryBlog,
+                     blog,
+                     categoryBlog,
                  })
                  .Where(I => I.categoryBlog.CategoryId == categoryId)
                  .Select(I => new Blog
@@ -44,8 +44,8 @@ namespace SEProject.MyBlogProject.DataAccess.Concrete.EntityFrameworkCore.Reposi
 
             return await context.Categories.Join(context.CategoryBlogs, c => c.Id, cb => cb.CategoryId, (category, categoryBlog) => new
             {
-                category = category,
-                categoryBlog = categoryBlog
+                category,
+                categoryBlog
             }).Where(I => I.categoryBlog.BlogId == blogId).Select(I => new Category
             {
                 Id = I.category.Id,
