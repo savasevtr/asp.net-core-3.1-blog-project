@@ -31,6 +31,9 @@ namespace SEProject.MyBlogProject.WebApi.Mapping.AutoMapperProfile
 
             CreateMap<CommentListDto, Comment>();
             CreateMap<Comment, CommentListDto>();
+
+            CreateMap<CommentAddDto, Comment>();
+            CreateMap<Comment, CommentAddDto>();
         }
     }
 }

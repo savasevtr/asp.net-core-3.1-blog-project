@@ -10,6 +10,7 @@ using SEProject.MyBlogProject.DataAccess.Interfaces;
 using SEProject.MyBlogProject.DTO.DTOs.AppUserDtos;
 using SEProject.MyBlogProject.DTO.DTOs.CategoryBlogDtos;
 using SEProject.MyBlogProject.DTO.DTOs.CategoryDtos;
+using SEProject.MyBlogProject.DTO.DTOs.CommentDtos;
 
 namespace SEProject.MyBlogProject.Business.Containers.MicrosoftIoC
 {
@@ -40,6 +41,7 @@ namespace SEProject.MyBlogProject.Business.Containers.MicrosoftIoC
             services.AddTransient<IValidator<CategoryAddDto>, CategoryAddValidator>();
             services.AddTransient<IValidator<CategoryBlogDto>, CategoryBlogValidator>();
             services.AddTransient<IValidator<CategoryUpdateDto>, CategoryUpdateValidator>();
+            services.AddTransient<IValidator<CommentAddDto>, CommentAddValidator>();
         }
     }
 }
