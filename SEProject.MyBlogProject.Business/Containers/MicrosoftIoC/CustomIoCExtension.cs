@@ -28,6 +28,9 @@ namespace SEProject.MyBlogProject.Business.Containers.MicrosoftIoC
             services.AddScoped<IAppUserService, AppUserManager>();
             services.AddScoped<IAppUserDal, EfAppUserRepository>();
 
+            services.AddScoped<ICommentService, CommentManager>();
+            services.AddScoped<ICommentDal, EfCommentRepository>();
+
             services.AddScoped<IJwtService, JwtManager>();
 
             services.AddTransient<IValidator<AppUserLoginDto>, AppUserLoginValidator>();

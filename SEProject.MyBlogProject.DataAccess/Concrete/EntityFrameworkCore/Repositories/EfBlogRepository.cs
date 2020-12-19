@@ -37,5 +37,27 @@ namespace SEProject.MyBlogProject.DataAccess.Concrete.EntityFrameworkCore.Reposi
 
             return blogs;
         }
+
+        public async Task<List<Category>> GetCategoriesAsync(int blogId)
+        {
+            var context = new BlogContext();
+
+            return await context.Categories.Join(context.CategoryBlogs, c => c.Id, cb => cb.CategoryId, (category, categoryBlog) => new
+            {
+                category = category,
+                categoryBlog = categoryBlog
+            }).Where(I => I.categoryBlog.BlogId == blogId).Select(I => new Category
+            {
+                Id = I.category.Id,
+                Name = I.category.Name
+            }).ToListAsync();
+        }
+
+        public async Task<List<Blog>> GetLastFiveAsync()
+        {
+            using var context = new BlogContext();
+
+            return await context.Blogs.OrderByDescending(I => I.PostedTime).Take(5).ToListAsync();
+        }
     }
 }

@@ -4,6 +4,8 @@ using Microsoft.AspNetCore.Mvc;
 using SEProject.MyBlogProject.Business.Interfaces;
 using SEProject.MyBlogProject.DTO.DTOs.BlogDtos;
 using SEProject.MyBlogProject.DTO.DTOs.CategoryBlogDtos;
+using SEProject.MyBlogProject.DTO.DTOs.CategoryDtos;
+using SEProject.MyBlogProject.DTO.DTOs.CommentDtos;
 using SEProject.MyBlogProject.Entities.Concrete;
 using SEProject.MyBlogProject.WebApi.CustomFilters;
 using SEProject.MyBlogProject.WebApi.Enums;
@@ -18,11 +20,13 @@ namespace SEProject.MyBlogProject.WebApi.Controllers
     public class BlogsController : BaseController
     {
         private readonly IBlogService _blogService;
+        private readonly ICommentService _commentService;
         private readonly IMapper _mapper;
 
-        public BlogsController(IBlogService blogService, IMapper mapper)
+        public BlogsController(IBlogService blogService, ICommentService commentService, IMapper mapper)
         {
             _blogService = blogService;
+            _commentService = commentService;
             _mapper = mapper;
         }
 
@@ -128,6 +132,25 @@ namespace SEProject.MyBlogProject.WebApi.Controllers
         public async Task<IActionResult> GetAllByCategoryId(int id)
         {
             return Ok(await _blogService.GetAllByCategoryIdAsync(id));
+        }
+
+        [HttpGet("{id}/[action]")]
+        [ServiceFilter(typeof(ValidId<Blog>))]
+        public async Task<IActionResult> GetCategories(int id)
+        {
+            return Ok(_mapper.Map<List<CategoryListDto>>(await _blogService.GetCategoriesAsync(id)));
+        }
+
+        [HttpGet("[action]")]
+        public async Task<IActionResult> GetLastFive()
+        {
+            return Ok(_mapper.Map<List<BlogListDto>>(await _blogService.GetLastFiveAsync()));
+        }
+
+        [HttpGet("{id}/[action]")]
+        public async Task<IActionResult> GetComments([FromRoute]int id, int? parentCommentId)
+        {
+            return Ok(_mapper.Map<List<CommentListDto>>(await _commentService.GetAllWithSubCommentsAsync(id, parentCommentId)));
         }
     }
 }
