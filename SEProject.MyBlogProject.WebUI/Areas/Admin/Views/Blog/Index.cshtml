@@ -3,27 +3,27 @@
     ViewData["Title"] = "Blog Listesi";
 }
 
-<h1 class="mt-4">Blog Listesi</h1>
+<h4 class="mt-4">Blog Listesi</h4>
 
 <a class="btn btn-info btn-sm my-4" asp-area="Admin" asp-controller="Blog" asp-action="Create">Yeni Blog Yaz</a>
 
 <table class="table table-bordered table-hover">
     <thead>
         <tr>
-            <th>Id</th>
+            <th class="text-center" style="width: 5%">Id</th>
             <th>Başlık</th>
-            <th>İşlem</th>
+            <th class="text-center" style="width: 15%;">İşlem</th>
         </tr>
     </thead>
     <tbody>
         @foreach (var item in Model)
         {
         <tr>
-            <td>@item.Id</td>
+            <td class="text-center">@item.Id</td>
             <td>@item.Title</td>
-            <td>
-                <a href="#" class="btn btn-outline-primary btn-sm">Düzenle</a>
-                <a href="#" class="btn btn-outline-danger btn-sm">Sil</a>
+            <td class="text-center">
+                <a asp-area="Admin" asp-controller="Blog" asp-action="Update" asp-route-id="@item.Id" class="btn btn-outline-primary btn-sm">Düzenle</a>
+                <a asp-area="Admin" asp-controller="Blog" asp-action="Delete" asp-route-id="@item.Id" class="btn btn-outline-danger btn-sm">Sil</a>
             </td>
         </tr>
         }

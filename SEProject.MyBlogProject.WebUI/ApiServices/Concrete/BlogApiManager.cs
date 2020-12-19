@@ -88,5 +88,43 @@ namespace SEProject.MyBlogProject.WebUI.ApiServices.Concrete
 
              await _httpClient.PostAsync("", formData);
         }
+
+        public async Task UpdateAsync(BlogUpdateModel model)
+        {
+            MultipartFormDataContent formData = new MultipartFormDataContent();
+
+            if (model.Image != null)
+            {
+                var bytes = await File.ReadAllBytesAsync(model.Image.FileName);
+
+                ByteArrayContent byteArrayContent = new ByteArrayContent(bytes);
+
+                byteArrayContent.Headers.ContentType = new MediaTypeHeaderValue(model.Image.ContentType);
+
+                formData.Add(byteArrayContent, nameof(BlogUpdateModel.Image), model.Image.FileName);
+            }
+
+            var user = _httpContextAccessor.HttpContext.Session.GetObject<AppUserViewModel>("activeUser");
+
+            model.AppUserId = user.Id;
+
+            formData.Add(new StringContent(model.Id.ToString()), nameof(BlogUpdateModel.Id));
+            formData.Add(new StringContent(model.AppUserId.ToString()), nameof(BlogUpdateModel.AppUserId));
+            formData.Add(new StringContent(model.Title), nameof(BlogUpdateModel.Title));
+            formData.Add(new StringContent(model.ShortDescription), nameof(BlogUpdateModel.ShortDescription));
+            formData.Add(new StringContent(model.Description), nameof(BlogUpdateModel.Description));
+
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _httpContextAccessor.HttpContext.Session.GetString("token"));
+
+            await _httpClient.PutAsync($"{model.Id}", formData);
+        }
+
+
+        public async Task DeleteAsync(int id)
+        {
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _httpContextAccessor.HttpContext.Session.GetString("token"));
+
+            await _httpClient.DeleteAsync($"{id}");
+        }
     }
 }

@@ -15,6 +15,8 @@
     <!-- Custom styles for this template -->
     <link href="~/template/startbootstrap-simple-sidebar-gh-pages/css/simple-sidebar.css" rel="stylesheet" />
 
+    @RenderSection("css", false)
+
 </head>
 
 <body>
@@ -26,17 +28,19 @@
             <div class="sidebar-heading">Admin Panel </div>
             <div class="list-group list-group-flush">
                 <a href="#" class="list-group-item list-group-item-action bg-light">Dashboard</a>
-                
+
                 <a class="list-group-item list-group-item-action bg-light" asp-area="Admin" asp-controller="Blog" asp-action="Index">
-                    Bloglar
+                    Blog Listesi
                 </a>
 
-                <a href="#" class="list-group-item list-group-item-action bg-light">Overview</a>
+                <a class="list-group-item list-group-item-action bg-light" asp-area="Admin" asp-controller="Category" asp-action="Index">
+                    Kategoriler
+                </a>
 
                 <a href="#" class="list-group-item list-group-item-action bg-light">Events</a>
-                
+
                 <a href="#" class="list-group-item list-group-item-action bg-light">Profile</a>
-                
+
                 <a href="#" class="list-group-item list-group-item-action bg-light">Status</a>
 
             </div>
@@ -96,6 +100,7 @@
         });
     </script>
 
+    @RenderSection("script", false)
 </body>
 
 </html>

@@ -1,9 +1,12 @@
-﻿using Newtonsoft.Json;
+﻿using Microsoft.AspNetCore.Http;
+using Newtonsoft.Json;
 using SEProject.MyBlogProject.WebUI.ApiServices.Interfaces;
 using SEProject.MyBlogProject.WebUI.Models;
 using System;
 using System.Collections.Generic;
 using System.Net.Http;
+using System.Net.Http.Headers;
+using System.Text;
 using System.Threading.Tasks;
 
 namespace SEProject.MyBlogProject.WebUI.ApiServices.Concrete
@@ -11,10 +14,12 @@ namespace SEProject.MyBlogProject.WebUI.ApiServices.Concrete
     public class CategoryApiManager : ICategoryApiService
     {
         private readonly HttpClient _httpClient;
+        private readonly IHttpContextAccessor _httpContextAccessor;
 
-        public CategoryApiManager(HttpClient httpClient)
+        public CategoryApiManager(HttpClient httpClient, IHttpContextAccessor httpContextAccessor)
         {
             _httpClient = httpClient;
+            _httpContextAccessor = httpContextAccessor;
             _httpClient.BaseAddress = new Uri("http://localhost:56977/api/categories/");
         }
 
@@ -52,6 +57,35 @@ namespace SEProject.MyBlogProject.WebUI.ApiServices.Concrete
             }
 
             return null;
+        }
+
+        public async Task AddAsync(CategoryAddModel model)
+        {
+            var jsonData = JsonConvert.SerializeObject(model);
+
+            var content = new StringContent(jsonData, Encoding.UTF8, "application/json");
+
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _httpContextAccessor.HttpContext.Session.GetString("token"));
+
+            await _httpClient.PostAsync("", content);
+        }
+
+        public async Task UpdateAsync(CategoryUpdateModel model)
+        {
+            var jsonData = JsonConvert.SerializeObject(model);
+
+            var content = new StringContent(jsonData, Encoding.UTF8, "application/json");
+
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _httpContextAccessor.HttpContext.Session.GetString("token"));
+
+            await _httpClient.PutAsync($"{model.Id}", content);
+        }
+
+        public async Task DeleteAsync(int id)
+        {
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _httpContextAccessor.HttpContext.Session.GetString("token"));
+
+            await _httpClient.DeleteAsync($"{id}");
         }
     }
 }

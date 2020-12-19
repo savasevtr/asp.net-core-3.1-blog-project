@@ -1,0 +1,45 @@
+﻿@model BlogUpdateModel
+@{
+    ViewData["Title"] = "Blog Düzenle";
+}
+
+<h4 class="mt-4">Blog Düzenle</h4>
+
+<form asp-area="Admin" asp-controller="Blog" asp-action="Update" method="post" class="p-3" enctype="multipart/form-data">
+
+    <input type="hidden" asp-for="Id" />
+
+    <div class="form-group">
+        <label asp-for="Title"></label>
+        <input type="text" asp-for="Title" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="ShortDescription"></label>
+        <input type="text" asp-for="ShortDescription" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Description"></label>
+        <textarea asp-for="Description" class="form-control"></textarea>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Image"></label>
+        <input type="file" class="form-control-file" asp-for="Image" />
+    </div>
+
+    <button type="submit" class="btn btn-outline-success btn-sm">Güncelle</button>
+
+</form>
+
+@section css {
+    <link href="~/lib/trumbowyg/dist/ui/trumbowyg.min.css" rel="stylesheet" />
+}
+
+@section script {
+    <script src="~/lib/trumbowyg/dist/trumbowyg.min.js"></script>
+    <script>
+        $("#Description").trumbowyg();
+    </script>
+}

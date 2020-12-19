@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 namespace SEProject.MyBlogProject.WebUI.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [JwtAuthorize]
     public class BlogController : Controller
     {
         private readonly IBlogApiService _blogApiService;
@@ -16,19 +17,16 @@ namespace SEProject.MyBlogProject.WebUI.Areas.Admin.Controllers
             _blogApiService = blogApiService;
         }
 
-        [JwtAuthorize]
         public async Task<IActionResult> Index()
         {
             return View(await _blogApiService.GetAllAsync());
         }
 
-        [JwtAuthorize]
         public IActionResult Create()
         {
             return View(new BlogAddModel());
         }
 
-        [JwtAuthorize]
         [HttpPost]
         public async Task<IActionResult> Create(BlogAddModel model)
         {
@@ -40,6 +38,38 @@ namespace SEProject.MyBlogProject.WebUI.Areas.Admin.Controllers
             }
 
             return View(model);
+        }
+
+        public async Task<IActionResult> Update(int id)
+        {
+            var blogList = await _blogApiService.GetByIdAsync(id);
+
+            return View(new BlogUpdateModel {
+                Id = blogList.Id,
+                Title = blogList.Title,
+                ShortDescription = blogList.ShortDescription,
+                Description = blogList.Description
+            });
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Update(BlogUpdateModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                await _blogApiService.UpdateAsync(model);
+
+                return RedirectToAction("Index");
+            }
+
+            return View(model);
+        }
+
+        public async Task<IActionResult> Delete(int id)
+        {
+            await _blogApiService.DeleteAsync(id);
+
+            return RedirectToAction("Index");
         }
     }
 }

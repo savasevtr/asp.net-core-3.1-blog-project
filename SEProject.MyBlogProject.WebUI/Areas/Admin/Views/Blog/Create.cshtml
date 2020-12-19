@@ -3,7 +3,7 @@
     ViewData["Title"] = "Blog Ekle";
 }
 
-<h1 class="mt-4">Blog Ekle</h1>
+<h4 class="mt-4">Blog Ekle</h4>
 
 <form asp-area="Admin" asp-controller="Blog" asp-action="Create" method="post" class="p-3" enctype="multipart/form-data">
 
@@ -30,3 +30,14 @@
     <button type="submit" class="btn btn-outline-success btn-sm">Kaydet</button>
 
 </form>
+
+@section css {
+    <link href="~/lib/trumbowyg/dist/ui/trumbowyg.min.css" rel="stylesheet" />
+}
+
+@section script {
+    <script src="~/lib/trumbowyg/dist/trumbowyg.min.js"></script>
+    <script>
+        $("#Description").trumbowyg();
+    </script>
+}
