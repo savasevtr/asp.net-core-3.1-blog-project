@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Net.Http;
 using System.Net.Http.Headers;
+using System.Text;
 using System.Threading.Tasks;
 
 namespace SEProject.MyBlogProject.WebUI.ApiServices.Concrete
@@ -137,6 +138,15 @@ namespace SEProject.MyBlogProject.WebUI.ApiServices.Concrete
             }
 
             return null;
+        }
+
+        public async Task AddToComment(CommentAddModel model)
+        {
+            var jsonData = JsonConvert.SerializeObject(model);
+
+            var content = new StringContent(jsonData, Encoding.UTF8, "application/json");
+
+            await _httpClient.PostAsync("AddComment", content);
         }
     }
 }

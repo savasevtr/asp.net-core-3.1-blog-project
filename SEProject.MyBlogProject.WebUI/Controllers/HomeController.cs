@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using SEProject.MyBlogProject.WebUI.ApiServices.Interfaces;
+using SEProject.MyBlogProject.WebUI.Models;
 using System.Threading.Tasks;
 
 namespace SEProject.MyBlogProject.WebUI.Controllers
@@ -30,6 +31,14 @@ namespace SEProject.MyBlogProject.WebUI.Controllers
             ViewBag.Comments = await _blogApiService.GetCommentsAsync(id, null);
 
             return View(await _blogApiService.GetByIdAsync(id));
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> AddToComment(CommentAddModel model)
+        {
+            await _blogApiService.AddToComment(model);
+
+            return RedirectToAction("BlogDetails", new { id = model.BlogId });
         }
     }
 }
