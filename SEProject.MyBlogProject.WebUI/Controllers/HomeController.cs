@@ -14,13 +14,20 @@ namespace SEProject.MyBlogProject.WebUI.Controllers
             _blogApiService = blogApiService;
         }
 
-        public async Task<IActionResult> Index(int? categoryId)
+        public async Task<IActionResult> Index(int? categoryId, string s)
         {
             if (categoryId.HasValue)
             {
                 ViewBag.ActiveCategory = categoryId;
 
                 return View(await _blogApiService.GetAllByCategoryId((int)categoryId));
+            }
+
+            if (!string.IsNullOrWhiteSpace(s))
+            {
+                ViewBag.SearchString = s;
+
+                return View(await _blogApiService.SearchAsync(s));
             }
 
             return View(await _blogApiService.GetAllAsync());

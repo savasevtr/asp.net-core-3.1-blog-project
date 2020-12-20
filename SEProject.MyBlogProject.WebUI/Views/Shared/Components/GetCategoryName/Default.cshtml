@@ -1,6 +1,6 @@
 ﻿@model CategoryListModel
 
-<h1 class="my-4">
-    @Model.Name
-    <small>Posts</small>
-</h1>
+<div class="border border-dark p-3 my-2">
+    <strong>@Model.Name </strong> kategorisine ait sonuçlar:
+    <a asp-action="Index" class="float-right">Filtreyi Kaldır</a>
+</div>

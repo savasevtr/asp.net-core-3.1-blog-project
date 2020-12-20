@@ -121,3 +121,5 @@ C:\Users\SE\source\repos\MyBlogProject\SEProject.MyBlogProject.WebUI\obj\Debug\n
 C:\Users\SE\source\repos\MyBlogProject\SEProject.MyBlogProject.WebUI\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Category\Create.cshtml.g.cs
 C:\Users\SE\source\repos\MyBlogProject\SEProject.MyBlogProject.WebUI\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Category\Update.cshtml.g.cs
 C:\Users\SE\source\repos\MyBlogProject\SEProject.MyBlogProject.WebUI\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Blog\AssignCategory.cshtml.g.cs
+C:\Users\SE\source\repos\MyBlogProject\SEProject.MyBlogProject.WebUI\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\Search\Default.cshtml.g.cs
+C:\Users\SE\source\repos\MyBlogProject\SEProject.MyBlogProject.WebUI\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\LastFiveBlog\Default.cshtml.g.cs

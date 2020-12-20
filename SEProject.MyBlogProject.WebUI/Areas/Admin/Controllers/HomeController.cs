@@ -11,5 +11,12 @@ namespace SEProject.MyBlogProject.WebUI.Areas.Admin.Controllers
         {
             return View();
         }
+
+        public IActionResult SignOut()
+        {
+            HttpContext.Session.Remove("token");
+
+            return RedirectToAction("Index", "Home", new { area = "" });
+        }
     }
 }

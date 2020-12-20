@@ -7,12 +7,9 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Simple Sidebar - Start Bootstrap Template</title>
+    <title>Admin Panel - @ViewData["Title"]</title>
 
-    <!-- Bootstrap core CSS -->
     <link href="~/template/startbootstrap-simple-sidebar-gh-pages/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
-
-    <!-- Custom styles for this template -->
     <link href="~/template/startbootstrap-simple-sidebar-gh-pages/css/simple-sidebar.css" rel="stylesheet" />
 
     @RenderSection("css", false)
@@ -23,34 +20,29 @@
 
     <div class="d-flex" id="wrapper">
 
-        <!-- Sidebar -->
         <div class="bg-light border-right" id="sidebar-wrapper">
             <div class="sidebar-heading">Admin Panel </div>
             <div class="list-group list-group-flush">
-                <a href="#" class="list-group-item list-group-item-action bg-light">Dashboard</a>
+                <a asp-area="Admin" asp-controller="Home" asp-action="Index" class="list-group-item list-group-item-action bg-light">Dashboard</a>
 
-                <a class="list-group-item list-group-item-action bg-light" asp-area="Admin" asp-controller="Blog" asp-action="Index">
+                <a class="list-group-item list-group-item-action" asp-area="Admin" asp-controller="Blog" asp-action="Index">
                     Blog Listesi
                 </a>
 
-                <a class="list-group-item list-group-item-action bg-light" asp-area="Admin" asp-controller="Category" asp-action="Index">
+                <a class="list-group-item list-group-item-action" asp-area="Admin" asp-controller="Category" asp-action="Index">
                     Kategoriler
                 </a>
 
                 <a href="#" class="list-group-item list-group-item-action bg-light">Events</a>
 
-                <a href="#" class="list-group-item list-group-item-action bg-light">Profile</a>
-
-                <a href="#" class="list-group-item list-group-item-action bg-light">Status</a>
-
+                <a asp-area="Admin" asp-controller="Home" asp-action="SignOut" class="list-group-item list-group-item-action">Çıkış Yap</a>
             </div>
         </div>
-        <!-- /#sidebar-wrapper -->
-        <!-- Page Content -->
+
         <div id="page-content-wrapper">
 
             <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
-                <button class="btn btn-primary" id="menu-toggle">Toggle Menu</button>
+                <button class="btn btn-primary" id="menu-toggle">Menu</button>
 
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -83,16 +75,12 @@
                 @RenderBody()
             </div>
         </div>
-        <!-- /#page-content-wrapper -->
 
     </div>
-    <!-- /#wrapper -->
-    <!-- Bootstrap core JavaScript -->
 
     <script src="~/template/startbootstrap-simple-sidebar-gh-pages/vendor/jquery/jquery.min.js"></script>
     <script src="~/template/startbootstrap-simple-sidebar-gh-pages/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-    <!-- Menu Toggle Script -->
     <script>
         $("#menu-toggle").click(function (e) {
             e.preventDefault();
