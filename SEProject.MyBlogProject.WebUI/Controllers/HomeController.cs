@@ -27,6 +27,8 @@ namespace SEProject.MyBlogProject.WebUI.Controllers
 
         public async Task<IActionResult> BlogDetails(int id)
         {
+            ViewBag.Comments = await _blogApiService.GetCommentsAsync(id, null);
+
             return View(await _blogApiService.GetByIdAsync(id));
         }
     }
