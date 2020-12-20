@@ -123,7 +123,7 @@ namespace SEProject.MyBlogProject.WebApi.Controllers
         }
 
         [HttpDelete("[action]")]
-        public async Task<IActionResult> RemoveFromCategory(CategoryBlogDto categoryBlogDto)
+        public async Task<IActionResult> RemoveFromCategory([FromQuery]CategoryBlogDto categoryBlogDto)
         {
             await _blogService.RemoveFromCategoryAsync(categoryBlogDto);
 
