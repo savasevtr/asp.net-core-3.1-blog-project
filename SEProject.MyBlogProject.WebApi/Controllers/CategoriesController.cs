@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using SEProject.MyBlogProject.Business.Interfaces;
-using SEProject.MyBlogProject.Business.Utilities.LogTool;
+using SEProject.MyBlogProject.Business.Utilities.FacadeTools;
 using SEProject.MyBlogProject.DTO.DTOs.CategoryDtos;
 using SEProject.MyBlogProject.Entities.Concrete;
 using SEProject.MyBlogProject.WebApi.CustomFilters;
@@ -18,11 +18,13 @@ namespace SEProject.MyBlogProject.WebApi.Controllers
     {
         private readonly IMapper _mapper;
         private readonly ICategoryService _categoryService;
-        private readonly ICustomLogger _customLogger;
+        //private readonly ICustomLogger _customLogger;
+        private readonly IFacade _facade;
 
-        public CategoriesController(IMapper mapper, ICategoryService categoryService, ICustomLogger customLogger)
+        public CategoriesController(IMapper mapper, ICategoryService categoryService, IFacade facade)
         {
-            _customLogger = customLogger;
+            //_customLogger = customLogger;
+            _facade = facade;
             _mapper = mapper;
             _categoryService = categoryService;
         }
@@ -105,7 +107,7 @@ namespace SEProject.MyBlogProject.WebApi.Controllers
         {
             var errorInfo = HttpContext.Features.Get<IExceptionHandlerPathFeature>();
 
-            _customLogger.LogError($"\n Hatanın oluştuğu yer: {errorInfo.Path}\n Hata Mesajı: {errorInfo.Error.Message}\n Stack Trace: {errorInfo.Error.StackTrace}\n");
+            _facade.CustomLogger.LogError($"\n Hatanın oluştuğu yer: {errorInfo.Path}\n Hata Mesajı: {errorInfo.Error.Message}\n Stack Trace: {errorInfo.Error.StackTrace}\n");
 
             return Problem(detail: "Bir hata oluştu, en kısa sürede düzeltme yapılacak");
         }

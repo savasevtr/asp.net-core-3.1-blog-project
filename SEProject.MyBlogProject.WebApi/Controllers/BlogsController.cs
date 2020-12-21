@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Caching.Memory;
 using SEProject.MyBlogProject.Business.Interfaces;
+using SEProject.MyBlogProject.Business.Utilities.FacadeTools;
 using SEProject.MyBlogProject.DTO.DTOs.BlogDtos;
 using SEProject.MyBlogProject.DTO.DTOs.CategoryBlogDtos;
 using SEProject.MyBlogProject.DTO.DTOs.CategoryDtos;
@@ -24,27 +25,27 @@ namespace SEProject.MyBlogProject.WebApi.Controllers
         private readonly IBlogService _blogService;
         private readonly ICommentService _commentService;
         private readonly IMapper _mapper;
-        private readonly IMemoryCache _memoryCache;
+        private readonly IFacade _facade;
 
-        public BlogsController(IBlogService blogService, ICommentService commentService, IMapper mapper, IMemoryCache memoryCache)
+        public BlogsController(IBlogService blogService, ICommentService commentService, IMapper mapper, IFacade facade)
         {
             _blogService = blogService;
             _commentService = commentService;
             _mapper = mapper;
-            _memoryCache = memoryCache;
+            _facade = facade;
         }
 
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
-            if (_memoryCache.TryGetValue("blogs", out List<BlogListDto> list))
+            if (_facade.MemoryCache.TryGetValue("blogs", out List<BlogListDto> list))
             {
                 return Ok(list);
             }
 
             var blogs = _mapper.Map<List<BlogListDto>>(await _blogService.GetAllSortedByPostedTimeAsync());
 
-            _memoryCache.Set("blogs", blogs, new MemoryCacheEntryOptions()
+            _facade.MemoryCache.Set("blogs", blogs, new MemoryCacheEntryOptions()
             {
                 AbsoluteExpiration = DateTime.Now.AddDays(1),
                 Priority = CacheItemPriority.Normal

@@ -1,4 +1,5 @@
-﻿using Microsoft.IdentityModel.Tokens;
+﻿using Microsoft.Extensions.Options;
+using Microsoft.IdentityModel.Tokens;
 using SEProject.MyBlogProject.Business.StringInfos;
 using SEProject.MyBlogProject.Entities.Concrete;
 using System;
@@ -11,18 +12,27 @@ namespace SEProject.MyBlogProject.Business.Utilities.JwtTool
 {
     public class JwtManager : IJwtService
     {
+        private readonly IOptions<JwtInfo> _jwtInfoOptions;
+
+        public JwtManager(IOptions<JwtInfo> jwtInfoOptions)
+        {
+            _jwtInfoOptions = jwtInfoOptions;
+        }
+
         public JwtToken GenerateJwt(AppUser appUser)
         {
-            SymmetricSecurityKey symmetricSecurityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(JwtInfo.SecurityKey));
+            var jwtInfo = _jwtInfoOptions.Value;
+
+            SymmetricSecurityKey symmetricSecurityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtInfo.SecurityKey));
 
             SigningCredentials signingCredentials = new SigningCredentials(symmetricSecurityKey, SecurityAlgorithms.HmacSha256);
 
             JwtSecurityToken jwtSecurityToken = new JwtSecurityToken(
-                issuer: JwtInfo.Issuer,
-                audience: JwtInfo.Audience,
+                issuer: jwtInfo.Issuer,
+                audience: jwtInfo.Audience,
                 claims: SetClaims(appUser),
                 notBefore: DateTime.Now,
-                expires: DateTime.Now.AddMinutes(JwtInfo.Expires),
+                expires: DateTime.Now.AddMinutes(jwtInfo.Expires),
                 signingCredentials: signingCredentials
                 );
 

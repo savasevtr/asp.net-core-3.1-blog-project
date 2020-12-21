@@ -2,6 +2,7 @@
 using Microsoft.Extensions.DependencyInjection;
 using SEProject.MyBlogProject.Business.Concrete;
 using SEProject.MyBlogProject.Business.Interfaces;
+using SEProject.MyBlogProject.Business.Utilities.FacadeTools;
 using SEProject.MyBlogProject.Business.Utilities.JwtTool;
 using SEProject.MyBlogProject.Business.Utilities.LogTool;
 using SEProject.MyBlogProject.Business.ValidationRules.FluentValidation;
@@ -39,6 +40,7 @@ namespace SEProject.MyBlogProject.Business.Containers.MicrosoftIoC
             services.AddScoped<IJwtService, JwtManager>();
 
             services.AddScoped<ICustomLogger, NLogAdapter>();
+            services.AddScoped<IFacade, Facade>();
 
             services.AddTransient<IValidator<AppUserLoginDto>, AppUserLoginValidator>();
             services.AddTransient<IValidator<CategoryAddDto>, CategoryAddValidator>();

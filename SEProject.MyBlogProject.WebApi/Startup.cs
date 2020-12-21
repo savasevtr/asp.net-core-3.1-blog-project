@@ -28,6 +28,11 @@ namespace SEProject.MyBlogProject.WebApi
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+
+            services.Configure<JwtInfo>(Configuration.GetSection("JWTInfo"));
+
+            var jwtInfo = Configuration.GetSection("JWTInfo").Get<JwtInfo>();
+
             services.AddAutoMapper(typeof(Startup));
             services.AddDependencies();
             services.AddScoped(typeof(ValidId<>));
@@ -39,9 +44,9 @@ namespace SEProject.MyBlogProject.WebApi
                     opt.RequireHttpsMetadata = false;
                     opt.TokenValidationParameters = new TokenValidationParameters
                     {
-                        ValidIssuer = JwtInfo.Issuer,
-                        ValidAudience = JwtInfo.Audience,
-                        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(JwtInfo.SecurityKey)),
+                        ValidIssuer = jwtInfo.Issuer,
+                        ValidAudience = jwtInfo.Audience,
+                        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtInfo.SecurityKey)),
                         ValidateLifetime = true,
                         ValidateIssuer = true,
                         ValidateAudience = true,
