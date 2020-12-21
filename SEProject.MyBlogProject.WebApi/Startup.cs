@@ -31,6 +31,7 @@ namespace SEProject.MyBlogProject.WebApi
             services.AddAutoMapper(typeof(Startup));
             services.AddDependencies();
             services.AddScoped(typeof(ValidId<>));
+            services.AddMemoryCache();
 
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
                 .AddJwtBearer(opt =>
