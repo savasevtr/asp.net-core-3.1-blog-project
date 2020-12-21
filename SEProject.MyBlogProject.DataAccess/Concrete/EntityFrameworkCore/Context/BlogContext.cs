@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using SEProject.MyBlogProject.DataAccess.Concrete.EntityFrameworkCore.Mapping;
 using SEProject.MyBlogProject.Entities.Concrete;
 
@@ -6,9 +7,16 @@ namespace SEProject.MyBlogProject.DataAccess.Concrete.EntityFrameworkCore.Contex
 {
     public class BlogContext : DbContext
     {
+        private readonly IConfiguration _configuration;
+
+        public BlogContext(IConfiguration configuration)
+        {
+            _configuration = configuration;
+        }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("server=(localdb)\\mssqllocaldb; database=BlogDb; Integrated Security=true;");
+            optionsBuilder.UseSqlServer(_configuration.GetConnectionString("db1"));
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

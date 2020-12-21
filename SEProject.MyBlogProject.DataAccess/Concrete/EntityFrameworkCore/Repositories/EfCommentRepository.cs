@@ -10,6 +10,13 @@ namespace SEProject.MyBlogProject.DataAccess.Concrete.EntityFrameworkCore.Reposi
 {
     public class EfCommentRepository : EfGenericRepository<Comment>, ICommentDal
     {
+        private readonly BlogContext _context;
+
+        public EfCommentRepository(BlogContext context) : base(context)
+        {
+            _context = context;
+        }
+
         public async Task<List<Comment>> GetAllWithSubCommentsAsync(int blogId, int? parentId)
         {
             List<Comment> result = new List<Comment>();
@@ -21,9 +28,7 @@ namespace SEProject.MyBlogProject.DataAccess.Concrete.EntityFrameworkCore.Reposi
 
         private async Task GetComments(int blogId, int? parentId, List<Comment> result)
         {
-            using var context = new BlogContext();
-
-            var comments = await context.Comments
+            var comments = await _context.Comments
                 .Where(I => I.BlogId == blogId && I.ParentCommentId == parentId)
                 .OrderByDescending(I => I.PostedTime)
                 .ToListAsync();
