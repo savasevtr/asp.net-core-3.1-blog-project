@@ -78,3 +78,7 @@ C:\Users\SE\source\repos\MyBlogProject\SEProject.MyBlogProject.WebApi\bin\Debug\
 C:\Users\SE\source\repos\MyBlogProject\SEProject.MyBlogProject.WebApi\bin\Debug\netcoreapp3.1\FluentValidation.DependencyInjectionExtensions.dll
 C:\Users\SE\source\repos\MyBlogProject\SEProject.MyBlogProject.WebApi\obj\Debug\netcoreapp3.1\SEProject.MyBlogProject.WebApi.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\SE\source\repos\MyBlogProject\SEProject.MyBlogProject.WebApi\bin\Debug\netcoreapp3.1\NLog.dll
+C:\Users\SE\source\repos\MyBlogProject\SEProject.MyBlogProject.WebApi\bin\Debug\netcoreapp3.1\Microsoft.OpenApi.dll
+C:\Users\SE\source\repos\MyBlogProject\SEProject.MyBlogProject.WebApi\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\SE\source\repos\MyBlogProject\SEProject.MyBlogProject.WebApi\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\SE\source\repos\MyBlogProject\SEProject.MyBlogProject.WebApi\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll

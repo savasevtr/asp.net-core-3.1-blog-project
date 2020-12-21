@@ -7,6 +7,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
+using Microsoft.OpenApi.Models;
 using Newtonsoft.Json;
 using SEProject.MyBlogProject.Business.Containers.MicrosoftIoC;
 using SEProject.MyBlogProject.Business.StringInfos;
@@ -28,6 +29,28 @@ namespace SEProject.MyBlogProject.WebApi
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+
+            services.AddSwaggerGen(opt =>
+            {
+                opt.SwaggerDoc("doc", new OpenApiInfo {
+                    Title = "Blog Api",
+                    Description = "Blog Api Document",
+                    Contact = new OpenApiContact
+                    {
+                        Email = "savas.ev@yahoo.com",
+                        Name = "Savaþ Ev",
+                        Url = new Uri("https://www.savasev.com")
+                    }
+                });
+
+                opt.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+                {
+                    In = ParameterLocation.Header,
+                    Name = "Authorization",
+                    Type = SecuritySchemeType.Http,
+                    Description = "Bearer {token}"
+                });
+            });
 
             services.Configure<JwtInfo>(Configuration.GetSection("JWTInfo"));
 
@@ -63,12 +86,12 @@ namespace SEProject.MyBlogProject.WebApi
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            if (env.IsDevelopment())
-            {
-                app.UseDeveloperExceptionPage();
-            }
+            //if (env.IsDevelopment())
+            //{
+            //    app.UseDeveloperExceptionPage();
+            //}
 
-            // app.UseExceptionHandler("/Error");
+            app.UseExceptionHandler("/api/Error");
 
             app.UseRouting();
             
@@ -77,6 +100,13 @@ namespace SEProject.MyBlogProject.WebApi
             app.UseAuthentication();
 
             app.UseAuthorization();
+
+            app.UseSwagger();
+
+            app.UseSwaggerUI(opt =>
+            {
+                opt.SwaggerEndpoint("/swagger/doc/swagger.json", "Blog Api");
+            });
 
             app.UseEndpoints(endpoints =>
             {
