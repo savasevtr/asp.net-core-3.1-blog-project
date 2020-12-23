@@ -1,0 +1,12 @@
+C:\Users\SE\source\repos\MyBlogProject\SEProject.MyBlogProject.DTO\bin\Release\netcoreapp3.1\SEProject.MyBlogProject.DTO.deps.json
+C:\Users\SE\source\repos\MyBlogProject\SEProject.MyBlogProject.DTO\bin\Release\netcoreapp3.1\SEProject.MyBlogProject.DTO.dll
+C:\Users\SE\source\repos\MyBlogProject\SEProject.MyBlogProject.DTO\bin\Release\netcoreapp3.1\SEProject.MyBlogProject.DTO.pdb
+C:\Users\SE\source\repos\MyBlogProject\SEProject.MyBlogProject.DTO\bin\Release\netcoreapp3.1\SEProject.MyBlogProject.Entities.dll
+C:\Users\SE\source\repos\MyBlogProject\SEProject.MyBlogProject.DTO\bin\Release\netcoreapp3.1\SEProject.MyBlogProject.Entities.pdb
+C:\Users\SE\source\repos\MyBlogProject\SEProject.MyBlogProject.DTO\obj\Release\netcoreapp3.1\SEProject.MyBlogProject.DTO.csprojAssemblyReference.cache
+C:\Users\SE\source\repos\MyBlogProject\SEProject.MyBlogProject.DTO\obj\Release\netcoreapp3.1\SEProject.MyBlogProject.DTO.AssemblyInfoInputs.cache
+C:\Users\SE\source\repos\MyBlogProject\SEProject.MyBlogProject.DTO\obj\Release\netcoreapp3.1\SEProject.MyBlogProject.DTO.AssemblyInfo.cs
+C:\Users\SE\source\repos\MyBlogProject\SEProject.MyBlogProject.DTO\obj\Release\netcoreapp3.1\SEProject.MyBlogProject.DTO.csproj.CoreCompileInputs.cache
+C:\Users\SE\source\repos\MyBlogProject\SEProject.MyBlogProject.DTO\obj\Release\netcoreapp3.1\SEProject.MyBlogProject.DTO.csproj.CopyComplete
+C:\Users\SE\source\repos\MyBlogProject\SEProject.MyBlogProject.DTO\obj\Release\netcoreapp3.1\SEProject.MyBlogProject.DTO.dll
+C:\Users\SE\source\repos\MyBlogProject\SEProject.MyBlogProject.DTO\obj\Release\netcoreapp3.1\SEProject.MyBlogProject.DTO.pdb

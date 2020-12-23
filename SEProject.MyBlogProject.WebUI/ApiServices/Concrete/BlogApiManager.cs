@@ -67,7 +67,13 @@ namespace SEProject.MyBlogProject.WebUI.ApiServices.Concrete
 
             if (model.Image != null)
             {
-                var bytes = await File.ReadAllBytesAsync(model.Image.FileName);
+                // var bytes = await File.ReadAllBytesAsync(model.Image.FileName);
+
+                var stream = new MemoryStream();
+
+                await model.Image.CopyToAsync(stream);
+
+                var bytes = stream.ToArray();
 
                 ByteArrayContent byteArrayContent = new ByteArrayContent(bytes);
 
@@ -96,7 +102,13 @@ namespace SEProject.MyBlogProject.WebUI.ApiServices.Concrete
 
             if (model.Image != null)
             {
-                var bytes = await File.ReadAllBytesAsync(model.Image.FileName);
+                // var bytes = await File.ReadAllBytesAsync(model.Image.FileName);
+
+                var stream = new MemoryStream();
+
+                await model.Image.CopyToAsync(stream);
+
+                var bytes = stream.ToArray();
 
                 ByteArrayContent byteArrayContent = new ByteArrayContent(bytes);
 

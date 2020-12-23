@@ -40,18 +40,18 @@ namespace SEProject.MyBlogProject.WebApi.Controllers
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
-            if (_facade.MemoryCache.TryGetValue("blogs", out List<BlogListDto> list))
-            {
-                return Ok(list);
-            }
+            //if (_facade.MemoryCache.TryGetValue("blogs", out List<BlogListDto> list))
+            //{
+            //    return Ok(list);
+            //}
 
             var blogs = _mapper.Map<List<BlogListDto>>(await _blogService.GetAllSortedByPostedTimeAsync());
 
-            _facade.MemoryCache.Set("blogs", blogs, new MemoryCacheEntryOptions()
-            {
-                AbsoluteExpiration = DateTime.Now.AddDays(1),
-                Priority = CacheItemPriority.Normal
-            });
+            //_facade.MemoryCache.Set("blogs", blogs, new MemoryCacheEntryOptions()
+            //{
+            //    AbsoluteExpiration = DateTime.Now.AddDays(1),
+            //    Priority = CacheItemPriority.Normal
+            //});
 
             return Ok(blogs);
         }
@@ -102,16 +102,26 @@ namespace SEProject.MyBlogProject.WebApi.Controllers
 
             if (uploadModel.UploadState == UploadState.Success)
             {
-                blogUpdateModel.ImagePath = uploadModel.NewName;
-                await _blogService.UpdateAsync(_mapper.Map<Blog>(blogUpdateModel));
+                var updatedBlog = await _blogService.FindByIdAsync(blogUpdateModel.Id);
+
+                updatedBlog.ShortDescription = blogUpdateModel.ShortDescription;
+                updatedBlog.Title = blogUpdateModel.Title;
+                updatedBlog.Description = blogUpdateModel.Description;
+                updatedBlog.ImagePath = uploadModel.NewName;
+
+                await _blogService.UpdateAsync(updatedBlog);
+
                 return NoContent();
             }
             else if (uploadModel.UploadState == UploadState.NotExist)
             {
                 var updatedBlog = await _blogService.FindByIdAsync(blogUpdateModel.Id);
-                blogUpdateModel.ImagePath = updatedBlog.ImagePath;
+                updatedBlog.ShortDescription = blogUpdateModel.ShortDescription;
+                updatedBlog.Title = blogUpdateModel.Title;
+                updatedBlog.Description = blogUpdateModel.Description;
 
-                await _blogService.UpdateAsync(_mapper.Map<Blog>(blogUpdateModel));
+                await _blogService.UpdateAsync(updatedBlog);
+
                 return NoContent();
             }
             else

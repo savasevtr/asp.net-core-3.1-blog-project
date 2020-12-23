@@ -1,0 +1,15 @@
+C:\Users\SE\source\repos\MyBlogProject\SEProject.MyBlogProject.DataAccess\bin\Release\netcoreapp3.1\SEProject.MyBlogProject.DataAccess.deps.json
+C:\Users\SE\source\repos\MyBlogProject\SEProject.MyBlogProject.DataAccess\bin\Release\netcoreapp3.1\SEProject.MyBlogProject.DataAccess.runtimeconfig.json
+C:\Users\SE\source\repos\MyBlogProject\SEProject.MyBlogProject.DataAccess\bin\Release\netcoreapp3.1\SEProject.MyBlogProject.DataAccess.runtimeconfig.dev.json
+C:\Users\SE\source\repos\MyBlogProject\SEProject.MyBlogProject.DataAccess\bin\Release\netcoreapp3.1\SEProject.MyBlogProject.DataAccess.dll
+C:\Users\SE\source\repos\MyBlogProject\SEProject.MyBlogProject.DataAccess\bin\Release\netcoreapp3.1\SEProject.MyBlogProject.DataAccess.pdb
+C:\Users\SE\source\repos\MyBlogProject\SEProject.MyBlogProject.DataAccess\bin\Release\netcoreapp3.1\SEProject.MyBlogProject.Entities.dll
+C:\Users\SE\source\repos\MyBlogProject\SEProject.MyBlogProject.DataAccess\bin\Release\netcoreapp3.1\SEProject.MyBlogProject.Entities.pdb
+C:\Users\SE\source\repos\MyBlogProject\SEProject.MyBlogProject.DataAccess\obj\Release\netcoreapp3.1\SEProject.MyBlogProject.DataAccess.csprojAssemblyReference.cache
+C:\Users\SE\source\repos\MyBlogProject\SEProject.MyBlogProject.DataAccess\obj\Release\netcoreapp3.1\SEProject.MyBlogProject.DataAccess.AssemblyInfoInputs.cache
+C:\Users\SE\source\repos\MyBlogProject\SEProject.MyBlogProject.DataAccess\obj\Release\netcoreapp3.1\SEProject.MyBlogProject.DataAccess.AssemblyInfo.cs
+C:\Users\SE\source\repos\MyBlogProject\SEProject.MyBlogProject.DataAccess\obj\Release\netcoreapp3.1\SEProject.MyBlogProject.DataAccess.csproj.CoreCompileInputs.cache
+C:\Users\SE\source\repos\MyBlogProject\SEProject.MyBlogProject.DataAccess\obj\Release\netcoreapp3.1\SEProject.MyBlogProject.DataAccess.csproj.CopyComplete
+C:\Users\SE\source\repos\MyBlogProject\SEProject.MyBlogProject.DataAccess\obj\Release\netcoreapp3.1\SEProject.MyBlogProject.DataAccess.dll
+C:\Users\SE\source\repos\MyBlogProject\SEProject.MyBlogProject.DataAccess\obj\Release\netcoreapp3.1\SEProject.MyBlogProject.DataAccess.pdb
+C:\Users\SE\source\repos\MyBlogProject\SEProject.MyBlogProject.DataAccess\obj\Release\netcoreapp3.1\SEProject.MyBlogProject.DataAccess.genruntimeconfig.cache

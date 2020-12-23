@@ -1,0 +1,16 @@
+C:\Users\SE\source\repos\MyBlogProject\SEProject.MyBlogProject.Business\bin\Release\netcoreapp3.1\SEProject.MyBlogProject.Business.deps.json
+C:\Users\SE\source\repos\MyBlogProject\SEProject.MyBlogProject.Business\bin\Release\netcoreapp3.1\SEProject.MyBlogProject.Business.dll
+C:\Users\SE\source\repos\MyBlogProject\SEProject.MyBlogProject.Business\bin\Release\netcoreapp3.1\SEProject.MyBlogProject.Business.pdb
+C:\Users\SE\source\repos\MyBlogProject\SEProject.MyBlogProject.Business\bin\Release\netcoreapp3.1\SEProject.MyBlogProject.DataAccess.dll
+C:\Users\SE\source\repos\MyBlogProject\SEProject.MyBlogProject.Business\bin\Release\netcoreapp3.1\SEProject.MyBlogProject.DTO.dll
+C:\Users\SE\source\repos\MyBlogProject\SEProject.MyBlogProject.Business\bin\Release\netcoreapp3.1\SEProject.MyBlogProject.Entities.dll
+C:\Users\SE\source\repos\MyBlogProject\SEProject.MyBlogProject.Business\bin\Release\netcoreapp3.1\SEProject.MyBlogProject.DataAccess.pdb
+C:\Users\SE\source\repos\MyBlogProject\SEProject.MyBlogProject.Business\bin\Release\netcoreapp3.1\SEProject.MyBlogProject.DTO.pdb
+C:\Users\SE\source\repos\MyBlogProject\SEProject.MyBlogProject.Business\bin\Release\netcoreapp3.1\SEProject.MyBlogProject.Entities.pdb
+C:\Users\SE\source\repos\MyBlogProject\SEProject.MyBlogProject.Business\obj\Release\netcoreapp3.1\SEProject.MyBlogProject.Business.csprojAssemblyReference.cache
+C:\Users\SE\source\repos\MyBlogProject\SEProject.MyBlogProject.Business\obj\Release\netcoreapp3.1\SEProject.MyBlogProject.Business.AssemblyInfoInputs.cache
+C:\Users\SE\source\repos\MyBlogProject\SEProject.MyBlogProject.Business\obj\Release\netcoreapp3.1\SEProject.MyBlogProject.Business.AssemblyInfo.cs
+C:\Users\SE\source\repos\MyBlogProject\SEProject.MyBlogProject.Business\obj\Release\netcoreapp3.1\SEProject.MyBlogProject.Business.csproj.CoreCompileInputs.cache
+C:\Users\SE\source\repos\MyBlogProject\SEProject.MyBlogProject.Business\obj\Release\netcoreapp3.1\SEProject.MyBlogProject.Business.csproj.CopyComplete
+C:\Users\SE\source\repos\MyBlogProject\SEProject.MyBlogProject.Business\obj\Release\netcoreapp3.1\SEProject.MyBlogProject.Business.dll
+C:\Users\SE\source\repos\MyBlogProject\SEProject.MyBlogProject.Business\obj\Release\netcoreapp3.1\SEProject.MyBlogProject.Business.pdb
