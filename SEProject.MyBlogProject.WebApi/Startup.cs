@@ -64,7 +64,7 @@ namespace SEProject.MyBlogProject.WebApi
             var jwtInfo = Configuration.GetSection("JWTInfo").Get<JwtInfo>();
 
             services.AddAutoMapper(typeof(Startup));
-            services.AddDependencies();
+            services.AddDependencies(Configuration);
             services.AddScoped(typeof(ValidId<>));
             services.AddMemoryCache();
 

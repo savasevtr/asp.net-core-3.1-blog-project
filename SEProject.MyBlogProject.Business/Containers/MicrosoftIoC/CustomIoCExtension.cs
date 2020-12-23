@@ -1,4 +1,6 @@
 ﻿using FluentValidation;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using SEProject.MyBlogProject.Business.Concrete;
 using SEProject.MyBlogProject.Business.Interfaces;
@@ -18,9 +20,14 @@ namespace SEProject.MyBlogProject.Business.Containers.MicrosoftIoC
 {
     public static class CustomIoCExtension
     {
-        public static void AddDependencies(this IServiceCollection services)
+        public static void AddDependencies(this IServiceCollection services, IConfiguration configuration)
         {
-            services.AddDbContext<BlogContext>();
+            services.AddDbContext<BlogContext>(opt =>
+            {
+                opt.UseSqlServer(configuration.GetConnectionString("db1"), conf => {
+                    conf.MigrationsAssembly("SEProject.MyBlogProject.WebApi");
+                });
+            });
 
             services.AddScoped(typeof(IGenericDal<>), typeof(EfGenericRepository<>));
             services.AddScoped(typeof(IGenericService<>), typeof(GenericManager<>));

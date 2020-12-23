@@ -9,15 +9,20 @@ namespace SEProject.MyBlogProject.DataAccess.Concrete.EntityFrameworkCore.Contex
     {
         private readonly IConfiguration _configuration;
 
-        public BlogContext(IConfiguration configuration)
+        //public BlogContext(IConfiguration configuration)
+        //{
+        //    _configuration = configuration;
+        //}
+
+        public BlogContext(DbContextOptions<BlogContext> options) : base(options)
         {
-            _configuration = configuration;
+
         }
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            optionsBuilder.UseSqlServer(_configuration.GetConnectionString("db1"));
-        }
+        //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        //{
+        //    optionsBuilder.UseSqlServer(_configuration.GetConnectionString("db1"));
+        //}
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

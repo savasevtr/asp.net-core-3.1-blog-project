@@ -82,3 +82,4 @@ C:\Users\SE\source\repos\MyBlogProject\SEProject.MyBlogProject.WebApi\bin\Debug\
 C:\Users\SE\source\repos\MyBlogProject\SEProject.MyBlogProject.WebApi\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.Swagger.dll
 C:\Users\SE\source\repos\MyBlogProject\SEProject.MyBlogProject.WebApi\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\SE\source\repos\MyBlogProject\SEProject.MyBlogProject.WebApi\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\SE\source\repos\MyBlogProject\SEProject.MyBlogProject.WebApi\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
