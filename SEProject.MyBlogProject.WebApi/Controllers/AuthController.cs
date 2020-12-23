@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using SEProject.MyBlogProject.Business.Interfaces;
 using SEProject.MyBlogProject.Business.Utilities.JwtTool;
@@ -10,6 +11,7 @@ namespace SEProject.MyBlogProject.WebApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [EnableCors]
     public class AuthController : ControllerBase
     {
         private readonly IAppUserService _appUserService;

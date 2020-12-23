@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using SEProject.MyBlogProject.Business.Interfaces;
 using SEProject.MyBlogProject.DTO.DTOs.CategoryDtos;
@@ -12,6 +13,7 @@ namespace SEProject.MyBlogProject.WebApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [EnableCors]
     public class CategoriesController : ControllerBase
     {
         private readonly IMapper _mapper;

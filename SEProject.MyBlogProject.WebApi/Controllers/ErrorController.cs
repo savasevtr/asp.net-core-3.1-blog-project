@@ -1,9 +1,11 @@
-﻿using Microsoft.AspNetCore.Diagnostics;
+﻿using Microsoft.AspNetCore.Cors;
+using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using SEProject.MyBlogProject.Business.Utilities.FacadeTools;
 
 namespace SEProject.MyBlogProject.WebApi.Controllers
 {
+    [EnableCors]
     public class ErrorController : ControllerBase
     {
         private readonly IFacade _facade;

@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Caching.Memory;
 using SEProject.MyBlogProject.Business.Interfaces;
@@ -20,6 +21,7 @@ namespace SEProject.MyBlogProject.WebApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [EnableCors]
     public class BlogsController : BaseController
     {
         private readonly IBlogService _blogService;

@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Cors;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using SEProject.MyBlogProject.WebApi.Enums;
 using SEProject.MyBlogProject.WebApi.Models;
@@ -10,6 +11,7 @@ namespace SEProject.MyBlogProject.WebApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [EnableCors]
     public class BaseController : ControllerBase
     {
         [HttpGet("[action]")]

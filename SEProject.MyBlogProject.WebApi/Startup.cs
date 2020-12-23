@@ -29,6 +29,13 @@ namespace SEProject.MyBlogProject.WebApi
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddCors(opt =>
+            {
+                opt.AddPolicy("global", cors =>
+                {
+                    cors.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader();
+                });
+            });
 
             services.AddSwaggerGen(opt =>
             {
@@ -94,15 +101,13 @@ namespace SEProject.MyBlogProject.WebApi
             app.UseExceptionHandler("/api/Error");
 
             app.UseRouting();
-            
             app.UseStaticFiles();
-
             app.UseAuthentication();
-
             app.UseAuthorization();
 
-            app.UseSwagger();
+            app.UseCors("global");
 
+            app.UseSwagger();
             app.UseSwaggerUI(opt =>
             {
                 opt.SwaggerEndpoint("/swagger/doc/swagger.json", "Blog Api");
